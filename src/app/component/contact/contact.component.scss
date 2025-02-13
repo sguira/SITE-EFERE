@@ -1,9 +1,13 @@
 .contact-illustration {
   max-width: 480px;
   text-align: center;
-  background-color: rgb(160, 160, 209) !important;
+  background: linear-gradient(135deg, var(--color-primary-light), var(--color-primary));
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  box-shadow: var(--shadow-lg);
 }
 
-.contact-container{
-  // background-color: var(--color-page-background);
+.contact-container {
+  background-color: var(--color-bg);
+  padding: 4rem 0;
 }

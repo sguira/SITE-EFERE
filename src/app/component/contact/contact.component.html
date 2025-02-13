@@ -1,53 +1,109 @@
-<section class="contact-section">
-    <div class="contact-container animate" appScrollAnimation>
-        <div class="contact-illustration" style="">
-            <img src="../../../assets/Image/Mail.gif" alt="Contact Illustration">
-        </div>
+<section class="contact-section py-5">
+    <div class="container" appScrollAnimation>
+        <div class="row g-5 align-items-center">
+            <!-- Left Column: Illustration & Info -->
+            <div class="col-lg-5">
+                <div class="contact-info-card glass-panel p-4 rounded-xl mb-4 text-center">
+                    <div class="illustration-wrapper mb-4">
+                        <img src="../../../assets/Image/Mail.gif" alt="Contact Illustration"
+                            class="img-fluid rounded-lg" style="max-height: 250px;">
+                    </div>
+                    <h2 class="h3 fw-bold mb-3">Discutons de votre projet</h2>
+                    <p class="text-muted mb-4">
+                        Notre équipe est là pour répondre à toutes vos questions sur Efere.
+                    </p>
 
-        <div class="contact-form-wrapper">
-            <div class="header">
-                <h1>Contactez-Nous</h1>
-                <p>Nous sommes ravis d'entendre parler de vous ! Remplissez le formulaire ci-dessous et nous vous recontacterons dans les plus brefs délais.</p>
+                    <div class="d-flex flex-column gap-3 text-start px-lg-4">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="icon-box-sm bg-primary-subtle text-primary rounded-circle p-2">
+                                <i class="ri-phone-line"></i>
+                            </div>
+                            <div>
+                                <small class="text-muted d-block">Téléphone</small>
+                                <span class="fw-medium">+225 07 08 06 76 17</span>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="icon-box-sm bg-primary-subtle text-primary rounded-circle p-2">
+                                <i class="ri-mail-send-line"></i>
+                            </div>
+                            <div>
+                                <small class="text-muted d-block">Email</small>
+                                <span class="fw-medium">contact@efere.com</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <form [formGroup]="userForm!" (ngSubmit)="onContact()">
-                <div class="input-floating">
-                    <input type="text" class="form-control" name="name" formControlName="name" placeholder=" " />
-                    <label for="name">Nom et Prénom</label>
-                </div>
+            <!-- Right Column: Form -->
+            <div class="col-lg-7">
+                <div class="contact-form-wrapper glass-panel p-5 rounded-xl shadow-lg">
+                    <div class="header mb-4">
+                        <h1 class="h2 fw-bold text-primary">Envoyez-nous un message</h1>
+                        <p class="text-muted">Remplissez le formulaire ci-dessous, nous vous répondrons rapidement.</p>
+                    </div>
 
-                <div class="input-floating">
-                    <input type="email" name="email" formControlName='email' placeholder=" " />
-                    <label for="email">Email</label>
-                </div>
+                    <form [formGroup]="userForm!" (ngSubmit)="onContact()" class="d-flex flex-column gap-3">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="name" formControlName="name"
+                                        placeholder="Votre nom">
+                                    <label for="name">Nom complet</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="email" class="form-control" id="email" formControlName="email"
+                                        placeholder="name@example.com">
+                                    <label for="email">Email</label>
+                                </div>
+                            </div>
+                        </div>
 
-                <div class="input-floating">
-                    <input type="tel" name="phone" formControlName='phone' placeholder=" " />
-                    <label for="phone">Numéro de téléphone</label>
-                </div>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="tel" class="form-control" id="phone" formControlName="phone"
+                                        placeholder="Téléphone">
+                                    <label for="phone">Téléphone</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="subject" formControlName="subject"
+                                        placeholder="Sujet">
+                                    <label for="subject">Sujet</label>
+                                </div>
+                            </div>
+                        </div>
 
-                <div class="input-floating">
-                    <input type="text" name="subject" formControlName='subject' title="" placeholder="" />
-                    <label for="subject">Sujet</label>
-                </div>
+                        <div class="form-floating">
+                            <textarea class="form-control" placeholder="Votre message" id="message"
+                                formControlName="message" style="height: 150px"></textarea>
+                            <label for="message">Votre message</label>
+                        </div>
 
-                <div class="input-floating textarea-group">
-                    <textarea name="message" formControlName='message' ></textarea>
-                    <label for="message">Votre message</label>
-                </div>
+                        <div class="d-flex justify-content-end gap-3 mt-2">
+                            <button type="reset" class="btn btn-outline-secondary rounded-pill px-4">Annuler</button>
+                            <button type="submit" [disabled]="userForm?.invalid" class="btn btn-primary-custom px-5">
+                                Envoyer <i class="ri-send-plane-fill ms-2"></i>
+                            </button>
+                        </div>
+                    </form>
 
-                <div class="btn-group">
-                    <button type="reset">Annuler</button>
-                    <button type="submit" [disabled]="userForm?.invalid">Envoyez</button>
-                </div>
-            </form>
+                    <div class="alert alert-danger mt-3 d-flex align-items-center" *ngIf="showError">
+                        <i class="ri-error-warning-fill me-2"></i>
+                        <div>Vérifiez votre connexion ou les informations saisies.</div>
+                    </div>
 
-            <span class="error" *ngIf="showError==true">
-                <p>Vérifiez votre connexion ou les informations saisies.</p>
-            </span>
-            <span class="success" *ngIf="showResponse==true">
-                <p>Message envoyé avec succès !</p>
-            </span>
+                    <div class="alert alert-success mt-3 d-flex align-items-center" *ngIf="showResponse">
+                        <i class="ri-checkbox-circle-fill me-2"></i>
+                        <div>Message envoyé avec succès !</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>

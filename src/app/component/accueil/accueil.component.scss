@@ -1,309 +1,293 @@
-// Variables de couleurs globales (Rappel pour la référence)
-:root {
-  --color-page-background: #f0fff4;
-  --color-card-background: #ffffff;
-  --color-text-dark: #2c5e2d;
-  --color-text-muted: #6a9c7b;
-  --color-primary-accent: #38a452;     // Vert frais principal
-  --color-secondary-accent: #7dd18e;   // Vert plus clair/survol
-  --color-cta-background: #1e7e34;     // Vert foncé pour le CTA
-  --color-shadow-subtle: rgba(0, 0, 0, 0.08);
-  --color-border: #e0e0e0;
+// Import global variables if needed (usually available globally in Angular if configured, but good for reference)
+// @use '../../../styles.scss' as *;
+
+.home-container {
+    overflow-x: hidden;
 }
 
-.container {
-    // Supprimer les styles Bootstrap pour le conteneur principal si vous voulez le contrôler via SCSS
-    margin-top: 26px;
-    padding: 0 20px;
-    max-width: 1280px;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: var(--color-page-background);
-    color: var(--color-text-dark);
-    // Assurez-vous que l'overflow-y: hidden global est géré uniquement pour le corps de la page si nécessaire
-    // Retiré ici pour éviter de bloquer le défilement normal
+// --- UTILITIES ---
+.text-gradient {
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
-.wrapper{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  .bar{
-    background-color: rgb(63, 100, 51);
-    width: 38px;
-    height: 7px;
-    border-radius: 12px;
-    position: relative;
-    top: 3px;
-    display: flex;
-    justify-content: center;
-    // margin: auto;
-    z-index: 0;
-    }
-    .glass{
-      background-color: rgba(182, 187, 175, 0.136);
-      backdrop-filter: blur(10px);
-      padding: 8px ;
-      border-radius: 8px;
-      z-index: 999 !important;
-      width: 75px;
-      height: 100px;
-}
-}
-
-.glass-2{
-  background-color: rgba(182, 187, 175, 0.136);
-  // backdrop-filter: blur(10px);
-  padding: 8px ;
-  border-radius: 8px;
-  z-index: 999 !important;
-  width: 250px;
-  min-height: 380px;
-  // height: 300px;
-}
-
-.icon-wrapper{
-  background-color: white;
-  width: 48px;
-  height: 48px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 12px;
-  // padding: 12px;
-  border-radius: 52px;
-  border: 1px dashed var(--color-border);
-}
-
-.avantage-item{
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-
-  &:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 10px 30px rgba(56, 164, 82, 0.25);
-      border: 1px solid var(--color-primary-accent);
-  }
-}
-
-
-// ----------------------------------------------------------------------
-// 1. SECTION BANNER (Héros)
-// ----------------------------------------------------------------------
-.banner {
-    display: flex;
-    justify-content: space-between;
+.badge-soft {
+    display: inline-flex;
     align-items: center;
-    padding: 60px 0;
-    overflow-y: hidden !important;
-    .contents {
-        max-width: 50%;
-        padding-right: 30px;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    background-color: rgba(26, 77, 46, 0.1);
+    /* Primary with opacity */
+    color: var(--color-primary);
+    font-weight: 600;
+    font-size: 0.875rem;
+}
 
-        // Titre principal
-        .shadow-xl { // Remplacé par une classe plus expressive
-            display: inline-block;
-            font-size: 2rem;
-            font-weight: 600;
-            line-height: 1.3;
-            color: var(--color-cta-background); // Vert foncé
-            background-color: rgba(56, 164, 82, 0.1); // Vert très léger comme fond
-            padding: 15px 25px;
-            margin: 10px 0;
-            border-radius: 8px;
+.btn-primary-custom {
+    background: var(--gradient-primary);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(26, 77, 46, 0.3);
 
-        }
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(26, 77, 46, 0.4);
+    }
+}
 
-        // Sous-titre/Paragraphe
-        .paragraphe {
-            font-size: 1.3rem;
-            color: var(--color-text-muted);
-            margin-top: 20px;
-        }
+.btn-outline-custom {
+    background: transparent;
+    color: var(--color-text-main);
+    border: 2px solid rgba(26, 77, 46, 0.2);
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
 
-        // --- Icônes de Fonctionnalités ---
-        .d-flex.gap-2.flex-wrap { // Conteneur de fonctionnalités
-            margin-top: 30px;
-            margin-bottom: 30px;
+    &:hover {
+        border-color: var(--color-primary);
+        color: var(--color-primary);
+        background: rgba(26, 77, 46, 0.05);
+    }
+}
 
-            div { // Élément de fonctionnalité
-                background-color: var(--color-card-background);
-                border: 1px solid var(--color-border);
-                transition: all 0.3s ease;
+// --- HERO SECTION ---
+.hero-section {
+    padding: 8rem 0 5rem;
+    position: relative;
+    background: radial-gradient(circle at top right, rgba(227, 178, 51, 0.1), transparent 40%),
+        radial-gradient(circle at bottom left, rgba(26, 77, 46, 0.05), transparent 40%);
 
-                &:hover {
-                    transform: translateY(-5px);
-                    box-shadow: 0 8px 15px rgba(56, 164, 82, 0.2);
-                    border-color: var(--color-primary-accent);
-                }
+    .hero-title {
+        font-size: 3.5rem;
+        font-weight: 800;
+        line-height: 1.2;
+        margin-bottom: 1.5rem;
+        letter-spacing: -0.02em;
+        color: var(--color-primary-dark);
 
-                img {
-                    filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.1));
-                }
-                p {
-                    color: var(--color-text-dark);
-                    font-weight: 500;
-                }
-            }
-        }
-
-        // --- Disponibilité (Available) ---
-        .available {
-            margin-top: 40px;
-
-            .font-large {
-                font-size: 1.2rem;
-                font-weight: 600;
-                color: var(--color-text-dark);
-            }
-
-            ul li {
-                background-color: var(--color-card-background);
-                border: 1px solid var(--color-border);
-                transition: transform 0.3s ease, border-color 0.3s ease;
-
-                &:hover {
-                    transform: scale(1.1);
-                    border-color: var(--color-primary-accent);
-                    box-shadow: 0 4px 10px var(--color-shadow-subtle);
-                }
-            }
+        @media (max-width: 768px) {
+            font-size: 2.5rem;
         }
     }
 
-    // --- Image du Téléphone avec Animation (Banner Image) ---
-    .image {
-        max-width: 50%;
-        animation: none; // Désactiver l'ancienne animation 'move' si elle est trop déroutante
+    .hero-subtitle {
+        font-size: 1.25rem;
+        color: var(--color-text-muted);
+        margin-bottom: 2rem;
+        max-width: 90%;
+    }
+
+    .platform-icon {
+        width: 48px;
+        height: 48px;
+        background: white;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: var(--shadow-sm);
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        cursor: pointer;
+        transition: transform 0.2s;
+
+        &:hover {
+            transform: translateY(-3px);
+        }
+    }
+}
+
+.image-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+
+    .blob-bg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 120%;
+        height: 120%;
+        background: radial-gradient(circle, rgba(26, 77, 46, 0.15) 0%, rgba(255, 255, 255, 0) 70%);
+        z-index: 0;
+    }
+
+    .main-img {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15));
+    }
+
+    .floating-card {
+        position: absolute;
+        z-index: 3;
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(10px);
+        padding: 0.75rem 1.25rem;
+        border-radius: 16px;
+        box-shadow: var(--shadow-lg);
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        font-weight: 600;
+        font-size: 0.9rem;
+        white-space: nowrap;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+
+        i {
+            font-size: 1.2rem;
+        }
+
+        &.card-1 {
+            top: 20%;
+            left: -20px;
+            animation: float 5s ease-in-out infinite;
+            color: var(--color-primary);
+        }
+
+        &.card-2 {
+            bottom: 20%;
+            right: -20px;
+            animation: float 6s ease-in-out infinite reverse;
+            color: var(--color-accent);
+        }
+    }
+}
+
+// --- FEATURES SECTION ---
+.features-section {
+    .feature-card {
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(10px);
+        transition: all 0.3s ease;
+
+        &:hover {
+            transform: translateY(-5px);
+            background: white;
+            box-shadow: var(--shadow-xl);
+        }
+
+        .icon-box {
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, rgba(26, 77, 46, 0.1), rgba(227, 178, 51, 0.1));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-primary);
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+    }
+}
+
+// --- SHOWCASE SECTION ---
+.showcase-section {
+    .bg-shape {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle at 50% 50%, rgba(26, 77, 46, 0.03) 0%, transparent 70%);
+        z-index: 0;
+    }
+
+    .mac-wrapper {
+        position: relative;
+        z-index: 1;
+        max-width: 900px;
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: scale(1.02);
+        }
 
         img {
-            width: 100%;
-            max-width: 450px;
-            height: auto;
-            object-fit: contain;
-            // Animation subtile pour le téléphone
-            animation: phone-float 6s ease-in-out infinite;
-            // box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 16px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
         }
     }
 }
 
-@keyframes phone-float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-15px); }
-}
+// --- BENEFITS SECTION ---
+.benefits-section {
+    .benefit-card {
+        background: white;
+        border: 1px solid rgba(0, 0, 0, 0.05);
 
-// ----------------------------------------------------------------------
-// 2. SECTION IMAGE ORDI (App-Image)
-// ----------------------------------------------------------------------
-.app-image {
-    margin: 80px 0;
-
-    img {
-        // Laisser votre animation GSAP/view() pour le moment, mais ajuster le style
-        width: 90%;
-        max-width: 1000px;
-        border-radius: 12px;
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15); // Ombre plus prononcée
-        border: 1px solid var(--color-border);
-    }
-}
-
-// ----------------------------------------------------------------------
-// 3. SECTION AVANTAGES (Pourquoi adopter Efere ?)
-// ----------------------------------------------------------------------
-.avantages-section { // Ajout d'un conteneur pour la lisibilité
-    padding: 60px 0;
-
-    .titre {
-        max-width: 800px;
-        text-align: center;
-        margin: 0 auto 40px auto;
-
-        h2 {
-            font-size: 2.5rem;
-            color: var(--color-cta-background);
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-        p {
-            color: var(--color-text-dark);
-            font-size: 1.1rem;
-        }
-    }
-
-    .avantages { // Conteneur des cartes d'avantages
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 25px;
-
-        .item { // Carte d'avantage
-            width: 300px;
-            background-color: var(--color-card-background);
+        .icon-wrapper-sm {
+            width: 48px;
+            height: 48px;
+            background: rgba(26, 77, 46, 0.1);
             border-radius: 12px;
-            padding: 30px;
-            text-align: center;
-            box-shadow: 0 4px 15px var(--color-shadow-subtle);
-            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-primary);
+            font-size: 1.25rem;
+        }
+    }
+}
 
-            // Effet d'animation au survol
-            &:hover {
-                transform: translateY(-8px);
-                box-shadow: 0 10px 30px rgba(56, 164, 82, 0.25);
-                border: 1px solid var(--color-primary-accent);
+// --- CTA SECTION ---
+.cta-section {
+    .cta-box {
+        background: linear-gradient(135deg, white, #f0fdf4);
+        border: 1px solid rgba(26, 77, 46, 0.1);
+        box-shadow: var(--shadow-xl);
+
+        .circle-decoration {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+            opacity: 0.05;
+
+            &.circle-1 {
+                width: 300px;
+                height: 300px;
+                top: -100px;
+                left: -100px;
             }
 
-            h1 {
-                font-size: 1.5rem;
-                color: var(--color-primary-accent);
-                font-weight: 600;
-                margin-bottom: 15px;
-            }
-            img {
-                width: 60px;
-                height: 60px;
-                // Coloriser les icônes SVG en vert si possible, sinon laisser
-                filter: grayscale(10%) drop-shadow(0 2px 2px rgba(0, 0, 0, 0.1));
-                margin-bottom: 15px;
-            }
-            p {
-                font-size: 0.95rem;
-                color: var(--color-text-dark);
-                line-height: 1.5;
+            &.circle-2 {
+                width: 200px;
+                height: 200px;
+                bottom: -50px;
+                right: -50px;
             }
         }
     }
 }
 
+// --- ANIMATIONS ---
+@keyframes float {
 
-// ----------------------------------------------------------------------
-// 4. MEDIA QUERIES (Responsivité)
-// ----------------------------------------------------------------------
-@media (max-width: 992px) {
-    .banner {
-        flex-direction: column;
-        text-align: center;
-        .contents {
-            max-width: 100%;
-            padding-right: 0;
-            order: 2; // Contenu après l'image
-            .shadow-xl {
-                font-size: 2rem;
-            }
-            .paragraphe {
-                text-align: center;
-            }
-        }
-        .image {
-            max-width: 80%;
-            margin-bottom: 30px;
-            order: 1; // Image avant le contenu
-        }
-        .contents .available {
-            // Centrer les éléments de disponibilité
-            align-items: center;
-            ul { justify-content: center; }
-        }
+    0%,
+    100% {
+        transform: translateY(0);
     }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+.floating-animation {
+    animation: float 6s ease-in-out infinite;
 }

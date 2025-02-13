@@ -1,455 +1,306 @@
-
 // @tailwind base;
 // @tailwind components;
 // @tailwind utilities;
 
 // Variable overrides first
-$primary: #900;
+$primary: #1a4d2e; // Deep Forest Green
+$secondary: #e3b233; // Gold Accent
 $enable-shadows: true;
 $prefix: "mo-";
 
 // Then import Bootstrap
 @import "../node_modules/bootstrap/scss/bootstrap";
 
-
-
-*{
-  -webkit-user-select: none; /* Safari */
-  -moz-user-select: none;    /* Firefox */
-  -ms-user-select: none;     /* Internet Explorer/Edge */
-  user-select: none;
-  font-family: 'Montserrat Alternates', sans-serif;
-
-}
-
-body{
-  background-color: #b8ffcd53;
-  font-family: 'Montserrat Alternates', sans-serif;
-}
-
-body {
-  font-family: 'Roboto', Arial, sans-serif;
-  background-color: red;
-}
-
-.animate-on-scroll {
-  // opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-.animate-on-scroll.in-view {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-
-
-.card {
-  background: white;
-  padding: 3px;
-  border-radius: 8px;
-  /* ombre discrète (pratiquement sans couleur) */
-  box-shadow:  0 8px 20px rgba(0, 0, 0, 0.15),0 4px 6px rgba(0, 0, 0, 0.10);
-  transition : box-shadow 0.3s ease, transform 0.3s ease;
-  overflow: hidden;
-  cursor: pointer !important;
-    &:hover{
-      box-shadow:  0 12px 24px rgba(0, 0, 0, 0.20),
-      0 8px 12px rgba(0, 0, 0, 0.15);
-      transform: translateY(-4px);
-      transform: scale(1.02);
-      transition: box-shadow 0.3s ease, transform 0.3s ease;
-    }
-}
-
-
-
+/* -------------------------------------------------------------------------- */
+/*                                 ROOT VARIABLES                             */
+/* -------------------------------------------------------------------------- */
 :root {
-  /* 🌐 Couleurs principales */
-  --color-primary: #7f978093;   /* Bleu principal (navbar, boutons) */
-  --color-primary-light: #48a21b; /* Bleu clair (hover, dégradés) */
-  --color-primary-dark: #000000c1;  /* Bleu foncé (footer, titres) */
+  /* 🎨 Brand Palette */
+  --color-primary: #1a4d2e;
+  /* Deep Forest Green */
+  --color-primary-light: #4f8f66;
+  /* Lighter Green */
+  --color-primary-dark: #0d2b18;
+  /* Darker Green */
 
-  /* 🎨 Couleurs neutres */
-  --color-bg: #F9FAFB;        /* Fond global (gris très clair) */
-  --color-surface: #FFFFFF;   /* Surfaces (cards, box) */
-  --color-border: #E5E7EB;    /* Bordures discrètes */
-  --color-text: #1F2937;      /* Texte principal (gris foncé) */
-  --color-text-light: #6B7280;/* Texte secondaire (gris moyen) */
+  --color-accent: #e3b233;
+  /* Gold */
+  --color-accent-hover: #cca02e;
 
-  /* 🌈 Couleurs d’accent (pour mettre en valeur) */
-  --color-accent: #E3B233;    /* Doré / Jaune (call-to-action, highlights) */
-  --color-accent-light: #FACC15; /* Accent plus clair */
-  --color-success: #10B981;   /* Vert (succès, validé) */
-  --color-error: #EF4444;     /* Rouge (erreurs, alertes) */
-  --color-warning: #F97316;   /* Orange (avertissements) */
+  /* 🖌️ Backgrounds & Surfaces */
+  --color-bg: #f8faf9;
+  /* Very light mint/grey */
+  --color-surface: #ffffff;
+  /* Pure white */
+  --color-surface-translucent: rgba(255, 255, 255, 0.85);
 
-  /* 🔳 Dégradés */
+  /* 📝 Typography */
+  --color-text-main: #111827;
+  /* Almost Black */
+  --color-text-muted: #4b5563;
+  /* Grey */
+  --color-text-inverted: #ffffff;
+
+  /* 🌈 Gradients */
   --gradient-primary: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
-  --gradient-accent: linear-gradient(135deg, var(--color-accent), #FFD95A);
-  --gradient-surface: linear-gradient(180deg, #FFFFFF, #F3F4F6);
+  --gradient-gold: linear-gradient(135deg, var(--color-accent), #fcd34d);
+  --gradient-hero: linear-gradient(180deg, #f0fdf4 0%, #ffffff 100%);
 
-  /* 🖤 Footer */
-  --color-footer-bg: var(--color-primary-dark);
-  --color-footer-text: #E5E7EB;
+  /* 📦 Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 
-  --gradient-page: linear-gradient(
-    43deg,
-    var(--color-primary-light) 0%,   /* bleu clair */
-    #E280DB 46%,                     /* violet/rose doux (accent intermédiaire) */
-    white 100%         /* doré */
-  );
+  /* 📐 Spacing & Radius */
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
 }
 
-
-.app-image{
-  animation: reveal linear;
-  animation-timeline: view();
-  animation-range: contain 0% contain 50%;
-
-
-
-}
-
-#text-carousel{
-  animation: reveal auto linear;
-  animation-timeline: scroller();
-  // animation-range: contain 0% contain 100%;
-}
-
-@keyframes reveal{
-  from{
-    opacity: 0;
-  }
-  to{
-    opacity:1;
-  }
-}
-
-.animate {
-  opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.5s ease,transform 0.5s ease;
-
-      &.visible{
-        opacity: 1;
-        transform: translateY(30px);
-        transition: opacity 0.5s ease,transform 0.5s ease;
-        animation: show 0.5s ease forwards;
-      }
-}
-
-@keyframes show {
-  from{
-    opacity: 0;
-    transform: translateY(90px);
-  }
-  to{
-    opacity: 1;
-    transform: translateY(0px);
-  }
-}
-
-
-h1{
-  color: var(--color-primary-dark);
-  font-weight: 600;
-  text-transform: capitalize;
-  text-emphasis: unset;
-  text-align: center;
-  font-size: 24px;
-  margin: 12px 0;
-  overflow: hidden;
-  @media screen and (max-width:720px){
-    font-size: 18px;
-  }
-}
-h1,h2,h3,h4,h5,h6{
-  overflow: hidden;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-
-
-// Variables de couleurs pour un thème clair et vert apaisant
-
-:root {
-  // --- Couleurs de Base ---
-  --color-page-background: #f8fbf7;    // Très clair, presque blanc (menthe pâle)
-  --color-card-background: #ffffff;    // Blanc pur pour les composants (formulaire, navbar, footer)
-  --color-text-dark: #030303;          // Vert foncé/forêt pour le texte principal (bonne lisibilité)
-  --color-text-muted: #6a9c7b;         // Vert plus doux pour le texte secondaire
-
-  // --- Couleurs d'Accent (Vert) ---
-  --color-primary-accent: #38a452;     // Vert frais et vibrant (couleur d'action principale)
-  --color-secondary-accent: #7dd18e;   // Vert plus clair pour les survols ou bordures
-  --color-cta-background: #1e7e34;     // Vert foncé pour le bouton CTA (fort contraste)
-
-  // --- Couleurs de Feedback ---
-  --color-success: #4caf50;            // Vert standard pour le succès
-  --color-error: #e57373;              // Rouge doux pour les erreurs
-
-  // --- Ombres et Effets ---
-  --color-shadow-subtle: rgba(0, 0, 0, 0.08); // Ombre très légère et douce
-  --color-border: #e0e0e0;             // Bordure grise très claire
+/* -------------------------------------------------------------------------- */
+/*                                 GLOBAL RESET                               */
+/* -------------------------------------------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* REMOVED: overflow-y: hidden !important; - This was blocking scrolling */
 }
 
 body {
-    background-color: var(--color-page-background);
-    color: var(--color-text-dark);
-    font-family: 'Inter', sans-serif; // Police moderne et lisible
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text-main);
+  line-height: 1.6;
+  overflow-x: hidden;
+  /* Prevent horizontal scroll only */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  color: var(--color-primary-dark);
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.2s ease;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                 UTILITIES                                  */
+/* -------------------------------------------------------------------------- */
+
+/* Animations */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+
+  &.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Glassmorphism */
+.glass-panel {
+  background: var(--color-surface-translucent);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Cards */
+.card-premium {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl);
+  }
+}
+
+/* Buttons */
+.btn-primary-custom {
+  background: var(--gradient-primary);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  border: none;
+  box-shadow: 0 4px 12px rgba(26, 77, 46, 0.3);
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(26, 77, 46, 0.4);
+    color: white;
+  }
+}
+
+.btn-accent-custom {
+  background: var(--gradient-gold);
+  color: var(--color-primary-dark);
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 700;
+  border: none;
+  box-shadow: 0 4px 12px rgba(227, 178, 51, 0.3);
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(227, 178, 51, 0.4);
+    color: var(--color-primary-dark);
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                 CONTACT SECTION                            */
+/* -------------------------------------------------------------------------- */
 .contact-section {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh; // Prend toute la hauteur de la vue
-  padding: 40px 20px;
-  background-color: var(--color-background-dark); // Fond sombre
+  min-height: 100vh;
+  padding: 80px 20px;
+  background: var(--gradient-hero);
 }
 
 .contact-container {
   display: flex;
-  flex-wrap: wrap; // Permet aux éléments de passer à la ligne sur mobile
-  background-color: var(--color-card-background);
-  border-radius: 12px;
-  box-shadow: 0 10px 30px var(--color-shadow-light); // Ombre plus prononcée
+  flex-wrap: wrap;
+  background-color: var(--color-surface);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xl);
   max-width: 1200px;
   width: 100%;
-  overflow: hidden; // Cache le débordement des bordures arrondies
+  overflow: hidden;
 
   .contact-form-wrapper {
     flex: 1;
-    padding: 40px;
-    min-width: 300px; // Assure une taille minimale sur les petits écrans
-    box-sizing: border-box;
+    padding: 60px;
+    min-width: 350px;
     display: flex;
     flex-direction: column;
-    justify-content: center; // Centre le contenu verticalement
+    justify-content: center;
   }
 
   .contact-illustration {
     flex: 1;
-    min-width: 300px; // Assure une taille minimale
+    min-width: 350px;
+    background: var(--gradient-primary);
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
-    box-sizing: border-box;
-    background: linear-gradient(135deg, #2f5722, #dedee9); // Gradient pour l'arrière-plan de l'illustration
-    position: relative; // Pour positionner l'image si besoin
+    padding: 40px;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
 
     img {
-      max-width: 100%;
+      max-width: 90%;
       height: auto;
-      border-radius: 8px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); // Légère ombre pour l'image
-    }
-  }
+      border-radius: var(--radius-lg);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+      transform: perspective(1000px) rotateY(-10deg);
+      transition: transform 0.5s ease;
 
-  .header {
-    margin-bottom: 30px;
-    text-align: center;
-    h1 {
-      font-size: 3rem; // Taille du titre plus grande
-      color: var(--color-primary-accent);
-      font-weight: 700;
-      letter-spacing: 0.5px;
-      margin-bottom: 10px;
-    }
-    p {
-      color: var(--color-text-muted);
-      font-size: 1.1rem;
-    }
-  }
-
-  form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px; // Espacement uniforme entre les champs
-
-    .input-group,
-    .textarea-group,
-    .input-floating {
-      position: relative; // Nécessaire pour les labels flottants
-      label {
-        color: var(--color-text-muted);
-        font-size: 0.9rem;
-        margin-bottom: 5px;
-        display: block; // Assure que le label prend sa propre ligne
-        transition: all 0.2s ease-out; // Animation pour le label flottant
-        position: absolute;
-        top: 15px;
-        left: 15px;
-        pointer-events: none; // Permet de cliquer à travers le label
-        transform-origin: left;
-      }
-
-      input,
-      textarea {
-        width: 100%;
-        padding: 15px;
-        border-radius: 8px;
-        border: 1px solid transparent; // Bordure transparente par défaut
-        // background-color: var(--color-input-background);
-        color: var(--color-text-light);
-        font-size: 1rem;
-        box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2); // Ombre interne
-        transition: all 0.3s ease;
-        box-sizing: border-box; // Inclut le padding dans la largeur
-
-        &:focus {
-          outline: none;
-          border-color: var(--color-border-focus);
-          box-shadow: 0 0 0 3px rgba(0, 188, 212, 0.3); // Anneau de focus
-          // background-color: #3b3b60; // Légèrement plus clair au focus
-        }
-
-        &::placeholder {
-          color: var(--color-text-placeholder);
-        }
-      }
-
-      textarea {
-        resize: vertical; // Permet de redimensionner verticalement
-        min-height: 120px;
-      }
-
-      // Styles pour les labels flottants Bootstrap-like
-      &.input-floating {
-        input:not(:placeholder-shown) + label,
-        input:focus + label,
-        textarea:not(:placeholder-shown) + label,
-        textarea:focus + label {
-          top: -10px; // Déplace le label vers le haut
-          left: 10px;
-          font-size: 0.75rem;
-          color: var(--color-primary-accent);
-          // background-color: var(--color-input-background); // Fond du label
-          padding: 0 5px;
-          border-radius: 4px;
-        }
-
-        input:focus + label,
-        textarea:focus + label {
-          // color: var(--color-primary-accent); // Couleur accentuée au focus
-        }
+      &:hover {
+        transform: perspective(1000px) rotateY(0deg);
       }
     }
-
-    .btn-group {
-      display: flex;
-      justify-content: flex-end; // Aligner les boutons à droite
-      gap: 15px; // Espacement entre les boutons
-      margin-top: 20px;
-
-      button {
-        padding: 12px 25px;
-        border: none;
-        border-radius: 50px; // Boutons pill-shaped
-        cursor: pointer;
-        font-size: 1rem;
-        font-weight: 600;
-        transition: all 0.3s ease;
-        text-transform: uppercase; // Texte en majuscules
-
-        &[type="submit"] {
-          background-color: var(--color-primary-accent);
-          color: var(--color-background-dark); // Texte sombre sur fond accent
-          box-shadow: 0 4px 15px var(--color-shadow-heavy);
-
-          &:hover {
-            background-color: var(--color-primary-accent);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px var(--color-shadow-heavy);
-          }
-
-          &:disabled {
-            background-color: var(--color-input-background); // Grisâtre si désactivé
-            color: var(--color-text-placeholder);
-            cursor: not-allowed;
-            transform: none;
-            box-shadow: none;
-          }
-        }
-
-        &[type="reset"] {
-          background-color: var(--color-input-background);
-          color: var(--color-text-light);
-          border: 1px solid var(--color-text-muted); // Bordure subtile
-
-          &:hover {
-            background-color: var(--color-secondary-accent);
-            border-color: var(--color-secondary-accent);
-            color: white;
-            transform: translateY(-2px);
-          }
-        }
-      }
-    }
-  }
-
-  // Messages d'erreur et de succès
-  .error, .success {
-    margin-top: 20px;
-    padding: 12px 20px;
-    border-radius: 8px;
-    text-align: center;
-    font-weight: 500;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-
-    p {
-      margin: 0;
-      color: white;
-    }
-  }
-  .error p {
-    background-color: var(--color-error);
-  }
-  .success p {
-    background-color: var(--color-success);
   }
 }
 
-// Media Queries pour l'adaptabilité
+/* Form Styles */
+.input-group {
+  position: relative;
+  margin-bottom: 1.5rem;
+
+  input,
+  textarea {
+    width: 100%;
+    padding: 1rem 1.25rem;
+    border-radius: var(--radius-md);
+    border: 2px solid #e5e7eb;
+    background-color: #f9fafb;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+
+    &:focus {
+      outline: none;
+      border-color: var(--color-primary);
+      background-color: white;
+      box-shadow: 0 0 0 4px rgba(26, 77, 46, 0.1);
+    }
+  }
+
+  label {
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+    color: #9ca3af;
+    pointer-events: none;
+    transition: all 0.2s ease;
+    background: transparent;
+  }
+
+  /* Floating Label Logic */
+  input:focus~label,
+  input:not(:placeholder-shown)~label,
+  textarea:focus~label,
+  textarea:not(:placeholder-shown)~label {
+    top: -0.6rem;
+    left: 0.8rem;
+    font-size: 0.75rem;
+    color: var(--color-primary);
+    background-color: white;
+    padding: 0 0.4rem;
+    font-weight: 600;
+  }
+}
+
+/* Responsive */
 @media (max-width: 768px) {
   .contact-container {
-    flex-direction: column; // Les deux colonnes deviennent une seule
-    .contact-illustration {
-      order: -1; // L'illustration apparaît en haut sur mobile
-      border-bottom-left-radius: 0;
-      border-bottom-right-radius: 0;
-      border-top-left-radius: 12px;
-      border-top-right-radius: 12px;
-      padding-bottom: 0; // Moins de padding en bas de l'image
-    }
-    .contact-form-wrapper {
-      padding: 30px 20px;
-    }
+    flex-direction: column-reverse;
   }
 
-  .contact-section {
-      padding: 20px 10px;
+  .contact-form-wrapper {
+    padding: 30px;
   }
 
-  .header h1 {
-    font-size: 2.5rem;
-  }
+  .contact-illustration {
+    padding: 60px 20px;
 
-  .btn-group {
-      flex-direction: column; // Boutons empilés
-      button {
-          width: 100%;
-      }
-  }
-}
-
-@media (max-width: 480px) {
-    .header h1 {
-        font-size: 2rem;
+    img {
+      transform: none;
     }
-    .contact-form-wrapper {
-        padding: 20px 15px;
-    }
+  }
 }

@@ -1,113 +1,104 @@
-
-container-fluid {
-    position: sticky !important;
-    top: 0;
-    height: 55px;
-}
-.navbar {
-  z-index: 1030; /* supérieur aux autres éléments */
+.container-fluid {
+  position: sticky !important;
+  top: 0;
+  height: 55px;
+  z-index: 1030;
 }
 
-// 2. Styles de la Navbar
 .navbar {
-  // Utilisation de la couleur de surface et non de la couleur primaire de votre ancienne variable
-  background-color: rgb(8, 99, 58) !important; // Fond rouge pour la navbar
+  background-color: var(--color-surface-translucent);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s ease-in-out;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 0 0 16px 16px;
+  padding: 0.5rem 1rem;
 
-  // Ajouter une ombre subtile mais visible pour donner de la profondeur
-  box-shadow: 0 4px 12px var(--color-shadow);
-  transition: background-color 0.3s ease-in-out; // Transition pour un effet plus doux
-  border-radius: 0 0 18px 18px;
-  // 3. Style du Logo
   .navbar-brand {
-    color: var(--color-text-light) !important;
-    font-weight: 700; // Gras
-    font-size: 1.5rem; // Taille plus grande
-    letter-spacing: 1px; // Espacement des lettres
+    color: var(--color-primary) !important;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: -0.5px;
   }
 
-  // 4. Styles des Liens de Navigation
   .nav-link {
-    color: white !important; // Couleur de base
+    color: var(--color-text-main) !important;
+    font-family: var(--font-body);
     font-weight: 500;
-    transition: color 0.3s ease, border-bottom 0.3s ease;
-    padding-bottom: 8px !important; // Espace pour l'effet de soulignement
-    // background-color: red !important;
+    transition: color 0.2s ease;
+    padding: 0.5rem 1rem !important;
+    position: relative;
 
     &:hover {
-      color: var(--color-primary-accent) !important; // Couleur vibrante au survol
+      color: var(--color-primary) !important;
     }
 
-    // Effet "active" : soulignement accentué
     &.active {
-      color: var(--color-primary-accent) !important;
-      border-bottom: 5px solid var(--color-primary-accent);
-      height: 100%;
-      border-radius: 2px;
-      background: linear-gradient(90deg, rgba(56, 164, 81, 0.062) 0%, rgba(203, 225, 208, 0.144) 100%) !important;
-    }
-  }
+      color: var(--color-primary) !important;
+      font-weight: 600;
 
-  // 5. Style du Bouton (CTA - Mon Espace)
-  .navbar-text button {
-    // Bouton de style "Ghost" (transparent) pour l'esthétique Dark Theme
-    background-color: transparent;
-    border: 2px solid var(--color-primary-accent); // Bordure accentuée
-    color: var(--color-primary-accent);
-    padding: 8px 20px;
-    border-radius: 50px; // Arrondi complet pour un look moderne (Pill-shape)
-    cursor: pointer;
-    font-size: 15px;
-    font-weight: 600;
-    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
-
-    // Effet au survol : Remplissage de la couleur accent
-    &:hover {
-      background-color: var(--color-primary-accent);
-      color: var(--color-dark); // Le texte devient sombre sur le fond clair
-      transform: translateY(-2px); // Léger déplacement vers le haut
-      box-shadow: 0 4px 10px rgba(0, 188, 212, 0.5); // Ombre pour l'effet pop
-    }
-  }
-
-  // Style du Toggle Button pour le mode sombre
-  .navbar-toggler {
-      border-color: var(--color-primary-accent) !important; // Bordure de l'icône
-      .navbar-toggler-icon {
-          filter: invert(1);
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 1rem;
+        right: 1rem;
+        height: 3px;
+        background-color: var(--color-primary);
+        border-radius: 2px;
       }
+    }
+  }
+
+  .navbar-text button {
+    background-color: var(--color-primary);
+    border: none;
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: var(--radius-md);
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+    box-shadow: var(--shadow-sm);
+
+    &:hover {
+      background-color: var(--color-primary-dark);
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-md);
+    }
+  }
+
+  .navbar-toggler {
+    border: none;
+    padding: 0.25rem;
+
+    &:focus {
+      box-shadow: none;
+    }
+
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(79, 70, 229, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
   }
 }
 
+@media screen and (max-width: 991px) {
+  .navbar {
+    background-color: var(--color-surface);
 
-.navbar-toggler{
-  background-color: white !important;
-}
-
-
-@media screen and (max-width:990px) {
-  .navbar{
-    // background-color: rgba(18, 88, 18, 0.241) !important;
-    // backdrop-filter: blur(22px);
-  }
-  .container-fluid{
-
-    margin: 16px 12px ;
+    .navbar-collapse {
+      background-color: var(--color-surface);
+      padding: 1rem;
+      border-radius: var(--radius-lg);
+      margin-top: 0.5rem;
+      box-shadow: var(--shadow-lg);
+    }
 
     .nav-item {
-      margin: 5px 0;
-      padding: 6px 18px ;
-
-    .nav-link {
-      padding: 15px 8px;
-      border: 1px solid rgba(255, 255, 255, 0.119);
-      color: black !important;
-      color: white !important;
-      &:active{
-        color: white !important;
-      }
-    }
+      margin: 0.25rem 0;
     }
   }
-
-
 }

@@ -1,84 +1,158 @@
-<div class="container">
-  <div class="banner animate row justify-content-between" appScrollAnimation>
-    <div class="contents col-md-6 col-12 d-flex flex-column align-items-center align-items-md-start justify-content-center">
-      <div class="d-flex flex-column">
-        <span class="shadow-xl   m-1 rounded banner-text">
-        Gérez Toutes les activitées de votre entreprise de façon efficace avec un Seul Outil Efere
-      </span>
-      <p class="paragraphe">
-        Qu'est ce que vous pouvez faire avec efere
-      </p>
-      </div>
+<div class="home-container">
 
-      <div class="d-flex flex-row justify-content-between align-items-center fonctionnalites flex-wrap">
+  <!-- 1. HERO SECTION -->
+  <section class="hero-section" appScrollAnimation>
+    <div class="container">
+      <div class="row align-items-center gy-5">
+        <!-- Text Content -->
+        <div class="col-lg-6 hero-content">
+          <div class="badge-soft mb-3 fade-in-up" style="animation-delay: 0.1s;">
+            <i class="ri-rocket-line me-2"></i> Solution de Gestion Tout-en-un
+          </div>
 
-        <div class="row g-4"  >
-          <div class="wrapper p-0 col-xl-3 col-4" *ngFor="let item of fonctionnalite">
-            <div class="bar"></div>
-            <div class="glass d-flex flex-column justify-content-center align-items-center p-2 text-center">
-              <div class="badge-icon mb-2">
-                <i [class]="item.icon" style="font-size: 22px;" ></i>
+          <h1 class="hero-title fade-in-up" style="animation-delay: 0.2s;">
+            Pilotez votre activité avec <span class="text-gradient">Efere</span>
+          </h1>
+
+          <p class="hero-subtitle fade-in-up" style="animation-delay: 0.3s;">
+            Gérez toutes les activités de votre entreprise de façon efficace avec un seul outil. Simple, intuitif et
+            puissant.
+          </p>
+
+          <div class="hero-actions d-flex gap-3 fade-in-up" style="animation-delay: 0.4s;">
+            <button class="btn-primary-custom">
+              Commencer Gratuitement <i class="ri-arrow-right-line ms-2"></i>
+            </button>
+            <button class="btn-outline-custom">
+              <i class="ri-play-circle-line me-2"></i> Voir la Démo
+            </button>
+          </div>
+
+          <div class="available-platforms mt-5 fade-in-up" style="animation-delay: 0.5s;">
+            <span class="text-muted text-sm mb-2 d-block">Disponible sur :</span>
+            <div class="d-flex gap-3">
+              <div class="platform-icon hover-lift" *ngFor="let item of availables">
+                <img [src]="item.icon" [alt]="item.texte" width="24" />
               </div>
-              <p class="font-thin font-normal text-align text-black" style="font-size: 11px;">{{item.texte}}</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Image -->
+        <div class="col-lg-6 hero-image d-flex justify-content-center">
+          <div class="image-wrapper floating-animation">
+            <div class="blob-bg"></div>
+            <img src="../../../assets/Image/phone22.png" alt="Efere App Dashboard" class="main-img relative z-10">
+
+            <!-- Floating Cards for Effect -->
+            <div class="floating-card card-1 glass-panel">
+              <i class="ri-bar-chart-grouped-fill text-success"></i>
+              <span>Croissance +15%</span>
+            </div>
+            <div class="floating-card card-2 glass-panel">
+              <i class="ri-checkbox-circle-fill text-primary"></i>
+              <span>Tâches complétées</span>
             </div>
           </div>
         </div>
       </div>
+    </div>
+  </section>
 
-      <div class="available d-flex flex-column align-items-center ml-sm-5 gap-3 mt-5">
-        <div class="font-large">
-          Disponible sur
+  <!-- 2. FEATURES GRID SECTION -->
+  <section class="features-section py-5" appScrollAnimation>
+    <div class="container">
+      <div class="section-header text-center mb-5">
+        <span class="badge-soft mb-2">Fonctionnalités</span>
+        <h2>Tout ce dont vous avez besoin</h2>
+        <p class="text-muted mx-auto" style="max-width: 600px;">
+          Une suite complète d'outils pour gérer votre business sans friction.
+        </p>
+      </div>
+
+      <div class="row g-4 justify-content-center">
+        <div class="col-xl-3 col-lg-4 col-md-6" *ngFor="let item of fonctionnalite">
+          <div class="feature-card glass-panel h-100 p-4 hover-lift text-center">
+            <div class="icon-box mb-3 mx-auto">
+              <i [class]="item.icon"></i>
+            </div>
+            <h5 class="mb-2 font-weight-bold">{{item.texte}}</h5>
+            <p class="text-muted small mb-0">Gérez cet aspect facilement avec Efere.</p>
+          </div>
         </div>
-        <ul class="d-flex gap-2 p-0 m-0 list-unstyled">
-          <li *ngFor="let item of availables" class=" shadow cursor-pointer rounded p-3 ">
-            <img [src]="item.icon" alt="item.texte" width="25" />
-          </li>
-        </ul>
-
       </div>
     </div>
-    <div class="image col-md-4 col-12 d-flex justify-content-center align-items-center mx-auto">
-      <img src="../../../assets/Image/phone22.png" alt="">
+  </section>
 
+  <!-- 3. SHOWCASE SECTION (Mac Image) -->
+  <section class="showcase-section py-5 position-relative overflow-hidden" appScrollAnimation>
+    <div class="bg-shape"></div>
+    <div class="container text-center">
+      <div class="section-header mb-5">
+        <h2>Interface Moderne et Intuitive</h2>
+        <p class="text-muted">Conçu pour être utilisé sur tous vos appareils.</p>
+      </div>
+
+      <div class="mac-wrapper mx-auto hover-lift" id="image-ordi">
+        <img src="../../../assets/Image/mac 1.png" alt="Desktop Interface" class="img-fluid rounded-xl shadow-2xl">
+      </div>
     </div>
-  </div>
+  </section>
 
-  <div class="row justify-content-center my-5">
-    <div class="col-7 mx-auto d-sm-block d-none" id="image-ordi" appScrollAnimation>
-    <img src="../../../assets/Image/mac 1.png" class="" alt="">
-  </div>
-  </div>
-
-
-  <div class="carousel animate" appScrollAnimation>
-    <app-header-carousel></app-header-carousel>
-  </div>
-
-
-  <div class="animate mt-5 d-flex flex-column justify-center  align-items-center" appScrollAnimation>
-    <div class="titre">
-      <h2>
-        Pourquoi adopter Efere ?
-      </h2>
-      <p>
-        Avec efere, vous bénéficiez d'une solution complète et intégrée pour gérer tous les aspects de votre entreprise. Nos fonctionnalités avancées vous permettent de
-      </p>
+  <!-- 4. CAROUSEL SECTION -->
+  <section class="carousel-section py-5 bg-light-subtle" appScrollAnimation>
+    <div class="container">
+      <app-header-carousel></app-header-carousel>
     </div>
-    <div class="row">
-      <div class="col-xl-3 col-12 g-3 wrapper avantage-item" *ngFor="let item of avantages">
-        <div class="bar"></div>
-        <div class="d-flex flex-column  align-items-center p-3 glass-2">
-          <h1>{{item.titre}}</h1>
-          <div class="icon-wrapper">
-            <i [class]="item.icon" style="font-size: 26px;"></i>
-          </div>
-          <p class="text-black font-thin" style="font-size: 14px;">
-            {{item.description }}
+  </section>
+
+  <!-- 5. BENEFITS SECTION (Pourquoi Efere) -->
+  <section class="benefits-section py-5" appScrollAnimation>
+    <div class="container">
+      <div class="row align-items-center mb-5">
+        <div class="col-lg-8 mx-auto text-center">
+          <h2 class="mb-3">Pourquoi adopter <span class="text-primary">Efere</span> ?</h2>
+          <p class="text-muted">
+            Avec Efere, vous bénéficiez d'une solution complète et intégrée pour gérer tous les aspects de votre
+            entreprise.
           </p>
         </div>
       </div>
-    </div>
 
-  </div>
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6" *ngFor="let item of avantages">
+          <div class="benefit-card p-4 h-100 glass-panel hover-lift border-0">
+            <div class="d-flex align-items-start gap-3">
+              <div class="icon-wrapper-sm flex-shrink-0">
+                <i [class]="item.icon"></i>
+              </div>
+              <div>
+                <h4 class="h5 mb-2">{{item.titre}}</h4>
+                <p class="text-muted small mb-0">{{item.description}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. CTA SECTION -->
+  <section class="cta-section py-5 text-center" appScrollAnimation>
+    <div class="container">
+      <div class="cta-box glass-panel p-5 rounded-xl position-relative overflow-hidden">
+        <div class="position-relative z-10">
+          <h2 class="mb-3 display-6 fw-bold">Prêt à transformer votre gestion ?</h2>
+          <p class="mb-4 text-muted lead">Rejoignez les entreprises qui font confiance à Efere.</p>
+          <button class="btn-primary-custom btn-lg">
+            Créer un compte maintenant
+          </button>
+        </div>
+        <!-- Decorative circles -->
+        <div class="circle-decoration circle-1"></div>
+        <div class="circle-decoration circle-2"></div>
+      </div>
+    </div>
+  </section>
 
 </div>
