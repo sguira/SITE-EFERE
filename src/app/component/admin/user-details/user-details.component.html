@@ -1,0 +1,52 @@
+<div class="carousel-wrapper">
+  <div class="carousel-header-content">
+    <h1 class="main-title">
+      Gérez vos clients, fournisseurs, stocks, comptabilité et commandes en un seul endroit.
+    </h1>
+    <p class="subtitle">
+      Efferay combine tous les éléments essentiels dans une seule application. Planifiez, vérifiez et rationalisez sans effort. Échangez l'encombrement des applications contre une solution simple et organisée avec Efferay !
+    </p>
+  </div>
+
+  <div class="carousel-container">
+    <div class="carousel-tabs">
+      <ul>
+        <li *ngFor="let item of carouselBody; let i = index"
+            [class.active-tab]="i === indexCarousel"
+            (click)="selectCarousel(i)"
+            tabindex="0"
+            role="button"
+            >
+          {{ item.titre }}
+        </li>
+      </ul>
+    </div>
+
+    <div class="carousel-content">
+      <div class="carousel-image-wrapper">
+        <img [src]="carouselBody[indexCarousel].image"
+             [alt]="carouselBody[indexCarousel].header"
+             [@fadeInOut]>
+      </div>
+      <div class="carousel-text-content">
+        <h3 class="content-title">
+          {{ carouselBody[indexCarousel].header }}
+        </h3>
+        <p class="content-description">
+          {{ carouselBody[indexCarousel].body }}
+        </p>
+      </div>
+
+      <div class="carousel-indicators">
+        <div class="indicator-dot"
+             *ngFor="let item of carouselBody; let i = index"
+             [class.active-dot]="indexCarousel === i"
+             (click)="selectCarousel(i)"
+             tabindex="0"
+             role="button"
+             >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

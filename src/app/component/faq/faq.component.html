@@ -1,0 +1,55 @@
+<div class="container">
+
+  <div class="image">
+    <img src="../../../assets/Image/faq2.svg" alt="">
+  </div>
+
+  <div class="titre">
+    <h1>
+      Reponse à quelques questions de base
+    </h1>
+  </div>
+
+  <div class="faqs">
+    <!-- <ul class="accordion">
+      <li *ngFor="let item of faqs;let i=index" checked>
+        <input type="radio" name="accordion" [id]="i">
+        <label for="first">{{item.titre}}</label>
+        <div class="contents" >
+          <p>{{item.description}}</p>
+          <ul>
+            <p *ngFor="let item of item.contents" >{{item}}</p>
+          </ul>
+        </div>
+      </li>
+    </ul> -->
+
+    <mat-accordion class="accordion-list">
+      <mat-expansion-panel *ngFor="let item of faqs" class="item">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            {{ item.titre }}
+          </mat-panel-title>
+
+        </mat-expansion-panel-header>
+        <mat-list>
+          <mat-panel-description>
+            {{ item.description }}
+          </mat-panel-description>
+          <br>
+          <p *ngFor="let detail of item.contents">{{ detail }}</p>
+          <div class="images">
+            <h2>
+              Quelques Images D'illustrations
+            </h2>
+            <div class="image" *ngFor="let illustraion of item.illustrations">
+              <label for=""> {{illustraion.titre}} </label>
+              <img [src]="illustraion.image" alt="">
+            </div>
+          </div>
+        </mat-list>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+
+</div>

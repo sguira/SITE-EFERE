@@ -1,0 +1,106 @@
+<!-- <div class="body">
+
+  <form [formGroup]="userForm!" (ngSubmit)="onContact()">
+    <div class="container">
+      <div class="row">
+          <h1>Contactez-Nous</h1>
+      </div>
+
+      <div class="row input-container">
+          <div class="col-xs-12">
+            <div class="styled-input wide">
+              <input type="text" formControlName="name"/>
+              <label for="nom">Nom</label>
+            </div>
+          </div>
+          <div class="inline">
+            <div class="col-md-2 col-sm-12  ">
+              <div class="styled-input">
+                <input type="text" formControlName="email" required />
+                <label for="email">Email</label>
+              </div>
+            </div>
+            <div class="col-md-6 col-sm-12">
+              <div class="styled-input" style="float:right;">
+                <input type="text" required formControlName="subject" />
+                <label for="numero">Numéro téléphonique</label>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12">
+            <div class="styled-input wide">
+              <input type="text" formControlName="subject"/>
+              <label for="sujet">Sujet</label>
+            </div>
+          </div>
+          <div class="col-xs-12">
+            <div class="styled-input wide">
+              <textarea formControlName="message" required></textarea>
+              <label for="message">Message</label>
+            </div>
+          </div>
+          <div class="response" *ngIf="showResponse">
+            Votre mail a été envoyé avec succès! <span><i class="ri-close-line"></i></span>
+          </div>
+          <div class="col-xs-12">
+            <div class="btn-lrg submit-btn" aria-disabled="true" [ngClass]="userForm?.valid?'active':'disable'">
+              <button type="submit">
+                Envoyer Message
+              </button>
+            </div>
+          </div>
+      </div>
+    </div>
+  </form>
+
+</div> -->
+
+<div class="container animate" appScrollAnimation>
+  <div>
+    <div class="header">
+      <h1>
+        Contactez-Nous
+      </h1>
+    </div>
+
+    <form [formGroup]="userForm!" (ngSubmit)="onContact()">
+
+      <div class="body">
+        <div class="input-group">
+          <label for="Nom et Prénom">Nom et Prénom</label>
+          <input type="text" name="name" formControlName="name">
+        </div>
+        <div class="input-group">
+          <label for="email">Email</label>
+          <input type="email" name="email" formControlName='email'>
+        </div>
+        <div class="input-group">
+          <label for="email">Numero</label>
+          <input type="email" name="numero" formControlName='phone'>
+        </div>
+        <div class="input-group">
+          <label for="Sujet">Sujet</label>
+          <input type="text" name="subject" formControlName='subject'>
+        </div>
+        <div class="textarea-group">
+          <label for="message">Message</label>
+          <textarea name="message" id="" formControlName='message'></textarea>
+        </div>
+        <div class="btn-group">
+          <button type="submit" [disabled]="userForm?.valid==false" >Envoyez</button>
+          <button type="reset" >Annuler</button>
+        </div>
+      </div>
+      <span class="error" *ngIf="showError==true">
+        <p>
+          Vérifiez votre connexion.
+        </p>
+      </span>
+      <span class="success" *ngIf="showResponse==true">
+        <p>
+          Message envoyé
+        </p>
+      </span>
+    </form>
+  </div>
+</div>

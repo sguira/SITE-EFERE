@@ -1,0 +1,36 @@
+.user{
+  margin: 6px;
+  padding: 6px;
+  background-color: rgb(255, 255, 255);
+  width: 280px;
+
+  .btns{
+    margin-top: 18px;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    button{
+      padding: 8px;
+      border: none;
+      background-color: blue;
+      color: white;
+      margin: 8px;
+      cursor: pointer;
+      border-radius: 4px;
+      &:hover{
+        transform: scale(1.02);
+      }
+    }
+  }
+
+   mat-card{
+    mat-card-content{
+      .item{
+        span{
+          font-size: 13px;
+        }
+      }
+    }
+  }
+}
+

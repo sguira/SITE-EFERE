@@ -1,0 +1,28 @@
+<div class="container">
+  <mat-card>
+      <mat-card-header>
+          <mat-card-title>Autenfitication</mat-card-title>
+          <mat-card-subtitle>Veuillez saisir vos coordonnées</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+          <div class="form">
+            <form [formGroup]="fg!" (ngSubmit)="authentification()">
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Entrez votre mail"  formControlName="email">
+              </div>
+              <div class="form-group">
+                <label for="email">Mot de passe</label>
+                <input type="password" id="email" name="email" placeholder="Entrez votre mail" formControlName="password">
+              </div>
+              <div class="btns">
+                <button type="submit" class="btn btn-primary" [disabled]="fg!.valid==false">Se connecter</button>
+                <button type="button" class="btn btn-secondary">Effacer</button>
+              </div>
+            </form>
+          </div>
+      </mat-card-content>
+
+
+  </mat-card>
+</div>

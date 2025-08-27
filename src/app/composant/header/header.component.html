@@ -1,0 +1,63 @@
+<div class="container" >
+  <div class="logo">
+    <img src="../../../assets/Image/bg.png" width="50"  alt="" routerLink="">
+    <h1>
+      EFFERAY
+    </h1>
+    <div>
+      <div class="icon">
+        <i class="ri-menu-line" *ngIf="isOpened==false" (click)='changeSteHeader()'></i>
+        <i class="ri-close-large-line" *ngIf="isOpened" (click)='changeSteHeader()'></i>
+      </div>
+    </div>
+  </div>
+
+  <!-- Web App bar  -->
+  <div class="list-web" @fadeInOut>
+
+    <ul class="nav">
+      <li > <a routerLink="" routerLinkActive="active" >Accueil</a> </li>
+      <li > <a routerLink="/apropos" routerLinkActive="active">Apropos</a> </li>
+      <li ><a routerLink="contact" routerLinkActive="active">Contact</a> </li>
+      <li ><a routerLink="faq" routerLinkActive="active">Faq</a> </li>
+
+      <!-- <li></li> -->
+
+    </ul>
+  </div>
+
+  <div class="connexion" (click)="openSpace()">
+    <a>
+      <!-- <i class="ri-user-line"></i> -->
+      Votre espace</a>
+  </div>
+
+  <!-- Mobile App Bar  -->
+  <div class="list" *ngIf="isOpened==true" @fadeInOut>
+
+
+      <div class="item-menu">
+        <a routerLink="" (click)="changeSteHeader()">Accueil</a>
+        <a routerLink="apropos" (click)="changeSteHeader()">Apropos</a>
+        <a routerLink="contact" (click)="changeSteHeader()">Contact</a>
+        <a routerLink="faq" (click)="changeSteHeader()">Faqs</a>
+        <a  routerLink="" class="connexion-2" (click)="openSpace()"> Votre Espace </a>
+      </div>
+
+      <!-- <li routerLink="" routerLinkActive="active">Accueil</li>
+      <li routerLink="apropos" routerLinkActive="active">Apropos</li>
+      <li routerLinkActive="active">Fonctionnalité</li>
+      <li routerLink="contact" routerLinkActive="active">Contact</li>
+      <li routerLink="contact" routerLinkActive="active">Faqs</li> -->
+      <!-- <li></li> -->
+
+
+  </div>
+  <div>
+    <ul>
+      <!-- <li>
+        connexion
+      </li> -->
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+.container{
+  // background-color: black;
+  padding: 18px;
+  margin: 76px auto;
+  // justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  justify-content: center;
+  justify-items: center;
+
+  // background-color: red;
+  .header{
+    // background-color: yellow;
+    justify-content: center;
+    display: flex;
+    margin: 18px auto;
+    color: white;
+  }
+  .list{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    // background-color: red;
+    justify-content: center;
+  }
+}
