@@ -3,155 +3,162 @@
   --color-card-background: #ffffff;
   --color-text-dark: #2c5e2d;
   --color-text-muted: #6a9c7b;
-  --color-primary-accent: #38a452;     // Vert frais principal
+  --color-primary-accent: #38a452; // Vert frais principal
   --color-secondary-accent: #7dd18e;
-  --color-cta-background: #1e7e34;     // Vert foncé pour le CTA
+  --color-cta-background: #1e7e34; // Vert foncé pour le CTA
   --color-shadow-subtle: rgba(0, 0, 0, 0.08);
   --color-border: #e0e0e0;
 }
 
 .carousel-1 {
-    padding: 0 1px;
+  padding: 0 1px;
 
-    // --- TITRE PRINCIPAL ---
-    .titre.grand {
-        // text-align: center;
-        max-width: 900px;
-        margin: 0 auto 50px auto;
+  // --- TITRE PRINCIPAL ---
+  .titre.grand {
+    // text-align: center;
+    max-width: 900px;
+    margin: 0 auto 50px auto;
 
-        h2 {
-            font-size: 3rem;
-            font-weight: 700;
-            color: var(--color-cta-background);
-            margin-bottom: 20px;
-        }
-        p {
-            font-size: 1.1rem;
-            color: var(--color-text-dark);
-        }
+    h2 {
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--color-cta-background);
+      margin-bottom: 20px;
     }
 
-    // --- NAVIGATION (ONGLETS) ---
-    .tabs-header {
-        // margin-bottom: 30px;
+    p {
+      font-size: 1.1rem;
+      color: var(--color-text-dark);
+    }
+  }
 
-        ul {
-            list-style: none;
-            padding: 0;
-            border-bottom: 2px solid var(--color-border);
-            // background-color: red;
-            height: 100%;
-            overflow-y: hidden !important;
-        }
+  // --- NAVIGATION (ONGLETS) ---
+  .tabs-header {
+    // margin-bottom: 30px;
 
-        .feature-tab {
-            padding: 10px 20px;
-            margin: 0 5px;
-            border-radius: 8px 8px 0 0;
-            cursor: pointer;
-            font-size: 1rem;
-            font-weight: 500;
-            color: var(--color-text-muted); // Couleur du texte inactif
-            transition: all 0.3s ease-in-out;
-            position: relative;
-
-            &:hover:not(.active-tab) {
-                color: var(--color-primary-accent);
-                background-color: rgba(56, 164, 82, 0.05);
-            }
-
-            // Onglet Actif (L'effet époustouflant)
-            &.active-tab {
-                color: var(--color-cta-background); // Texte en vert foncé
-                font-weight: 700;
-                // Ligne verte épaisse et vibrante pour le soulignement actif
-                border-bottom: 4px solid var(--color-primary-accent);
-                transform: translateY(2px); // Pousser légèrement pour l'effet de sélection
-                background-color: var(--color-card-background); // Fond blanc pur
-            }
-        }
+    ul {
+      list-style: none;
+      padding: 0;
+      border-bottom: 2px solid var(--color-border);
+      // background-color: red;
+      height: 100%;
+      overflow-y: hidden !important;
     }
 
-    // --- CONTENU PRINCIPAL (CARTE) ---
-    .content-area.card-stylized {
-        width: 100%;
-        background-color: var(--color-card-background);
-        border-radius: 12px;
-        box-shadow: 0 10px 30px var(--color-shadow-subtle); // Ombre élégante
-        overflow: hidden;
+    .feature-tab {
+      padding: 10px 20px;
+      margin: 0 5px;
+      border-radius: 8px 8px 0 0;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--color-text-muted); // Couleur du texte inactif
+      transition: all 0.3s ease-in-out;
+      position: relative;
 
-        .content-row {
-            align-items: center;
-        }
+      &:hover:not(.active-tab) {
+        color: var(--color-primary-accent);
+        background-color: rgba(56, 164, 82, 0.05);
+      }
 
-        .image-col {
-            padding: 30px;
-            background: linear-gradient(145deg, var(--color-page-background), var(--color-card-background)); // Fond subtil
-        }
-
-        .feature-image {
-            max-width: 100%;
-            height: auto;
-            object-fit: contain;
-            border-radius: 8px;
-            // Animation au survol sur l'image
-            transition: transform 0.5s ease;
-            &:hover {
-                transform: scale(1.03) rotate(1deg);
-            }
-        }
-
-        .text-content-col {
-            padding: 30px;
-
-            .content-header {
-                font-size: 2rem;
-                font-weight: 600;
-                margin-bottom: 15px;
-                position: relative;
-
-                // Ligne décorative sous le titre de la fonctionnalité
-                &::after {
-                    content: '';
-                    display: block;
-                    width: 50px;
-                    height: 3px;
-                    background-color: var(--color-secondary-accent);
-                    margin-top: 5px;
-                    border-radius: 1.5px;
-                }
-            }
-            .content-body {
-                font-size: 1rem;
-                color: var(--color-text-dark);
-                line-height: 1.6;
-            }
-        }
+      // Onglet Actif (L'effet époustouflant)
+      &.active-tab {
+        color: var(--color-cta-background); // Texte en vert foncé
+        font-weight: 700;
+        // Ligne verte épaisse et vibrante pour le soulignement actif
+        border-bottom: 4px solid var(--color-primary-accent);
+        transform: translateY(2px); // Pousser légèrement pour l'effet de sélection
+        background-color: var(--color-card-background); // Fond blanc pur
+      }
     }
+  }
+
+  // --- CONTENU PRINCIPAL (CARTE) ---
+  .content-area.card-stylized {
+    width: 100%;
+    background-color: var(--color-card-background);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px var(--color-shadow-subtle); // Ombre élégante
+    overflow: hidden;
+
+    .content-row {
+      align-items: center;
+    }
+
+    .image-col {
+      padding: 30px;
+      background: linear-gradient(145deg, var(--color-page-background), var(--color-card-background)); // Fond subtil
+    }
+
+    .feature-image {
+      max-width: 100%;
+      height: auto;
+      object-fit: contain;
+      border-radius: 8px;
+      // Animation au survol sur l'image
+      transition: transform 0.5s ease;
+
+      &:hover {
+        transform: scale(1.03) rotate(1deg);
+      }
+    }
+
+    .text-content-col {
+      padding: 30px;
+
+      .content-header {
+        font-size: 2rem;
+        font-weight: 600;
+        margin-bottom: 15px;
+        position: relative;
+
+        // Ligne décorative sous le titre de la fonctionnalité
+        &::after {
+          content: '';
+          display: block;
+          width: 50px;
+          height: 3px;
+          background-color: var(--color-secondary-accent);
+          margin-top: 5px;
+          border-radius: 1.5px;
+        }
+      }
+
+      .content-body {
+        font-size: 1rem;
+        color: var(--color-text-dark);
+        line-height: 1.6;
+      }
+    }
+  }
 }
 
 // --- Responsivité ---
 @media (max-width: 992px) {
-    .carousel-1 .content-area.card-stylized .content-row {
-        flex-direction: column; // Empiler les colonnes
+  .carousel-1 .content-area.card-stylized .content-row {
+    flex-direction: column; // Empiler les colonnes
 
-        .image-col, .text-content-col {
-            width: 100%;
-            padding: 20px;
-        }
+    .image-col,
+    .text-content-col {
+      width: 100%;
+      padding: 20px;
     }
-    .carousel-1 .titre.grand h2 {
-        font-size: 2rem;
-    }
+  }
+
+  .carousel-1 .titre.grand h2 {
+    font-size: 2rem;
+  }
 }
+
 @media (max-width: 768px) {
-    .carousel-1 .tabs-header ul {
-        flex-wrap: wrap;
-        justify-content: flex-start !important;
-    }
-    .carousel-1 .tabs-header .feature-tab {
-        margin: 5px;
-        flex-grow: 1;
-        // text-align: center;
-    }
+  .carousel-1 .tabs-header ul {
+    flex-wrap: wrap;
+    justify-content: flex-start !important;
+  }
+
+  .carousel-1 .tabs-header .feature-tab {
+    margin: 5px;
+    flex-grow: 1;
+    // text-align: center;
+  }
 }

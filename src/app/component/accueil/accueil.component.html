@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="home-container">
 
   <!-- 1. HERO SECTION -->
@@ -156,3 +157,101 @@
   </section>
 
 </div>
+=======
+<div class="container">
+  <div class="banner animate" appScrollAnimation>
+    <div class="contents">
+      <h1>
+        Gérez Toutes les activitées de votre entreprise de façon efficace avec un Seul Outil Efferay
+      </h1>
+      <p class="paragraphe">
+        Qu'est ce que vous pouvez faire avec Efferay
+      </p>
+
+      <div class="fonctionnalite">
+        <div class="item" *ngFor="let item of fonctionnalite">
+          <img [src]="item.image" alt="Image">
+          <p>{{item.texte}}</p>
+        </div>
+      </div>
+      <!-- <div class="button">
+        <button>commencer sur Efferay</button>
+      </div> -->
+      <div class="available">
+        Disponible sur
+        <ul>
+          <li *ngFor="let item of availables">
+            <img [src]="item.icon" [alt]="item.texte">
+          </li>
+        </ul>
+
+      </div>
+    </div>
+    <div class="image">
+      <img src="../../../assets/Image/phone22.png" alt="">
+
+    </div>
+  </div>
+
+  <div class="app-image animate" id="image-ordi" appScrollAnimation>
+    <img src="../../../assets/Image/mac 1.png" alt="">
+  </div>
+
+
+  <div class="carousel animate" appScrollAnimation>
+    <app-header-carousel></app-header-carousel>
+  </div>
+
+
+  <div class="avantages animate" appScrollAnimation>
+    <div class="titre">
+      <h2>
+        Avantages d'utiliser notre système
+      </h2>
+      <p>
+        Avec Efferay, vous bénéficiez d'une solution complète et intégrée pour gérer tous les aspects de votre entreprise. Nos fonctionnalités avancées vous permettent de
+      </p>
+    </div>
+    <div class="contain">
+      <div class="item">
+        <h1>Gain de temps considérable</h1>
+        <img src="../../../assets/icons/clock.svg" alt="">
+        <p>
+          Avec Efferay, simplifiez et automatisez vos tâches quotidiennes de gestion de stock et de comptabilité. Libérez-vous des processus chronophages et concentrez-vous sur le développement de votre entreprise. Gagnez en efficacité et productivité dès aujourd'hui.
+        </p>
+      </div>
+
+      <div class="item">
+        <h1>Reduction des erreurs</h1>
+        <img src="../../../assets/icons/lock.svg" alt="">
+        <p>
+          Avec Efferay, simplifiez et automatisez vos tâches quotidiennes de gestion de stock et de comptabilité. Libérez-vous des processus chronophages et concentrez-vous sur le développement de votre entreprise. Gagnez en efficacité et productivité dès aujourd'hui.
+        </p>
+      </div>
+      <div class="item">
+        <h1>Satisfaction des clients</h1>
+        <i class="ri-emotion-happy-line"></i>
+        <p>
+          Avec Efferay, offrez à vos clients une expérience fluide et professionnelle. Gérez leurs commandes avec précision, répondez rapidement à leurs besoins, et maintenez des relations solides. Des clients satisfaits sont la clé de votre succès.
+        </p>
+      </div>
+      <div class="item">
+        <h1>Optimiser la Gestion de vos Stocks</h1>
+        <i class="ri-arrow-up-circle-line"></i>
+        <p>
+          Avec Efferay, surveillez et contrôlez vos stocks en temps réel. Évitez les ruptures et les surstockages grâce à des alertes automatisées et des rapports détaillés. Gérez vos inventaires de manière efficace et assurez une disponibilité constante de vos produits.
+        </p>
+      </div>
+      <!-- <div class="item">
+        <h1>Optimiser la Gestion de vos Stocks</h1>
+        <i class="ri-database-2-fill"></i>
+        <p>
+          Avec Efferay, surveillez et contrôlez vos stocks en temps réel. Évitez les ruptures et les surstockages grâce à des alertes automatisées et des rapports détaillés. Gérez vos inventaires de manière efficace et assurez une disponibilité constante de vos produits.
+        </p>
+      </div> -->
+    </div>
+
+  </div>
+
+</div>
+>>>>>>> 231d21a (projet efere)

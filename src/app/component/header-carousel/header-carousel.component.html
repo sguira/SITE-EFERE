@@ -1,46 +1,46 @@
 <div class="container-1 col-md-10 m-auto animate mt-5" appScrollAnimation>
-    <div class="carousel-1">
+  <div class="carousel-1">
 
-        <div class="titre grand">
-            <h2 id="text-carousel">
-                Gérez vos clients, fournisseurs, stocks, comptabilité et commandes en un seul endroit.
-            </h2>
-            <p>
-              efere combine tous les éléments essentiels dans une seule application. Planifiez, vérifiez et rationalisez sans effort. Échangez l'encombrement des applications contre une solution simple et organisée avec efere !
-            </p>
-        </div>
-
-        <div class="carousel-containt-1 d-flex flex-column align-items-center">
-
-            <div class="tabs-header">
-                <ul class="d-flex justify-content-center align-items-center">
-                    <li *ngFor="let item of carouselBody;let i=index"
-                        class="feature-tab text-black"
-                        [ngClass]="i === indexCarousel ? 'active-tab' : ''"
-                        (click)="selectCarousel(i)">
-                        {{item.titre}}
-                    </li>
-                </ul>
-            </div>
-
-            <div class="content-area card-stylized p-5">
-                <div class="row content-row" [@slideInOut]="indexCarousel">
-
-                    <div class="col-md-6 d-flex justify-content-center image-col">
-                        <img [src]="carouselBody[indexCarousel].image" alt="Illustration de {{carouselBody[indexCarousel].titre}}" class="feature-image" width="400">
-                    </div>
-
-                    <div class="col-md-6 d-flex flex-column text-content-col">
-                        <div class="d-flex flex-column text-start">
-                            <h3 class="content-header text-black">
-                                {{carouselBody[indexCarousel].header}}
-                            </h3>
-                            <p class="content-body">{{carouselBody[indexCarousel].body}}</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
+    <div class="titre grand">
+      <h2 id="text-carousel">
+        Gérez vos clients, fournisseurs, stocks, comptabilité et commandes en un seul endroit.
+      </h2>
+      <p>
+        efere combine tous les éléments essentiels dans une seule application. Planifiez, vérifiez et rationalisez sans
+        effort. Échangez l'encombrement des applications contre une solution simple et organisée avec efere !
+      </p>
     </div>
+
+    <div class="carousel-containt-1 d-flex flex-column align-items-center">
+
+      <div class="tabs-header">
+        <ul class="d-flex justify-content-center align-items-center">
+          <li *ngFor="let item of carouselBody;let i=index" class="feature-tab text-black"
+            [ngClass]="i === indexCarousel ? 'active-tab' : ''" (click)="selectCarousel(i)">
+            {{item.titre}}
+          </li>
+        </ul>
+      </div>
+
+      <div class="content-area card-stylized p-5">
+        <div class="row content-row" [@slideInOut]="indexCarousel">
+
+          <div class="col-md-6 d-flex justify-content-center image-col">
+            <img [src]="carouselBody[indexCarousel].image" alt="Illustration de {{carouselBody[indexCarousel].titre}}"
+              class="feature-image" width="400">
+          </div>
+
+          <div class="col-md-6 d-flex flex-column text-content-col">
+            <div class="d-flex flex-column text-start">
+              <h3 class="content-header text-black">
+                {{carouselBody[indexCarousel].header}}
+              </h3>
+              <p class="content-body">{{carouselBody[indexCarousel].body}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
 </div>

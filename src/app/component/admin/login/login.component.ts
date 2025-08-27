@@ -7,6 +7,7 @@ import { StorageService } from 'src/app/service/storage.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
+<<<<<<< HEAD
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent {
@@ -38,4 +39,36 @@ export class LoginComponent {
         });
     }
   }
+=======
+  styleUrls: ['./login.component.scss']
+})
+export class LoginComponent {
+
+  fg?:FormGroup
+
+  constructor(public fb:FormBuilder,
+    public admin:AdminService,
+    public storage:StorageService,
+    public router:Router
+  ){
+    this.fg=this.fb.group({
+      email:['',[Validators.required,Validators.email]],
+      password:['',Validators.required]
+    })
+  }
+
+
+  authentification(){
+    if(this.fg?.valid){
+      this.admin.login(this.fg.value['email'],this.fg.value['password']).subscribe((e)=>{
+        console.log(e)
+        if(e['code']==1){
+          this.storage.saveData("token",e['token'])
+          this.router.navigateByUrl('/users')
+        }
+      })
+    }
+  }
+
+>>>>>>> 231d21a (projet efere)
 }
