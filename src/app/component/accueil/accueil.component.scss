@@ -1,382 +1,285 @@
-*{overflow-y: hidden;}
-.container{
-  // position: relative;
-  top: 126px;
-  z-index: -99;
-  margin-top: 126px;
+// Variables de couleurs globales (Rappel pour la référence)
+:root {
+  --color-page-background: #f0fff4;
+  --color-card-background: #ffffff;
+  --color-text-dark: #2c5e2d;
+  --color-text-muted: #6a9c7b;
+  --color-primary-accent: #38a452;     // Vert frais principal
+  --color-secondary-accent: #7dd18e;   // Vert plus clair/survol
+  --color-cta-background: #1e7e34;     // Vert foncé pour le CTA
+  --color-shadow-subtle: rgba(0, 0, 0, 0.08);
+  --color-border: #e0e0e0;
+}
+
+.container {
+    // Supprimer les styles Bootstrap pour le conteneur principal si vous voulez le contrôler via SCSS
+    margin-top: 126px;
+    padding: 0 20px;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: var(--color-page-background);
+    color: var(--color-text-dark);
+    // Assurez-vous que l'overflow-y: hidden global est géré uniquement pour le corps de la page si nécessaire
+    // Retiré ici pour éviter de bloquer le défilement normal
+}
+
+.wrapper{
   display: flex;
-  flex-direction: column;
-  flex-direction: wrap;
   justify-content: center;
   align-items: center;
-  // overflow-y: hidden;
-  .banner{
-    display: flex;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    z-index: -99;
-    // width: 100vw;
-    // background-color: yellow;
-    justify-content: center;
-    overflow-y: hidden;
-    .image{
-      // width: 30vw;
-      // background-color: red;
-      animation: move 10s infinite linear;
-      overflow: hidden;
-      img{
-        width: 420px;
-        overflow: hidden;
-        border-radius: 12px;
-      }
-    }
-
-    @keyframes move {
-      0% {
-        transform: translate(0, 0);
-      }
-      25% {
-        transform: translate(20px, 10px);
-      }
-      50% {
-        transform: translate(-10px, -10px);
-        transform: rotate(5);
-      }
-      75% {
-        transform: translate(10px, 20px);
-      }
-      100% {
-        transform: translate(0, 0);
-      }
-    }
-
-
-  }
-
-  .contents{
-    // width: 50vw;
-    max-width: 600px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: start;
-    align-items: start;
-    // background-color: blue;
-    padding: 16px;
-    h1{
-      max-width: 600px;
-      font-weight: bolder;
-      font-size: 26px;
-      color: white;
-      margin: 16px 0;
-    }
-
-    .fonctionnalite{
-      // background-color: red;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      padding: 16px;
-      .item{
-        margin: 8px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        align-self: center;
-        padding: 12px;
-        // background-color: yellow;
-        max-width: 100px;
-        border-radius: 4px;
-        background-color: rgba(223, 216, 216, 0.251);
-        font-size: 10px;
-        width: 120px;
-        height: 110px;
-        font-weight: 600;
-        border: none;
-        // color: ;
-        img{
-          // background-color: red;
-          padding: 6px;
-          border-radius: 6px;
-          height: 38px;
-          background-color: rgba(82, 82, 231, 0.122);
-        }
-        i{
-          color: red;
-          font-size: 56px;
-          width: 56px;
-        }
-      }
-    }
-
-    .button{
-      // display: flex;
-      // flex-direction: column;
-      // flex-wrap: wrap;
-      // background-color: red;
-      display: block;
-      button{
-        background-color: black;
-        padding: 12px;
-        color: white;
-        border-radius: 36px;
-        border: none;
-        // width: 200px;
-
-      }
-    }
-
-    .available{
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      align-items: center;
-      padding: 12px;
-      background-color: rgba(218, 208, 208, 0.538);
-      border-radius: 36px;
-
-      // background-color: red;
-      ul{
-        list-style: none;
-        display: flex;
-        li{
-          margin: 2px 8px;
-          img{
-            height: 22px;
-          }
-          &:hover{
-            transform: scale(1.1);
-            cursor: pointer;
-          }
-        }
-      }
-    }
-  }
-
-
-
-
-
-  .app-image{
-    // background-color: red;
-    view-timeline-name: reveal;
-    view-timeline-axis: block;
+  flex-direction: column;
+  .bar{
+    background-color: rgb(63, 100, 51);
+    width: 38px;
+    height: 7px;
+    border-radius: 12px;
+    position: relative;
+    top: 3px;
     display: flex;
     justify-content: center;
-    margin: 36px;
-
-    img{
-      width: 100%;
-      height: 80%;
-      object-fit: cover;
-
-      animation: auto linear reveal both;
-      animation-timeline: view();
-      animation-range: entry 25% cover 50%;
-     }
-
-     @keyframes reveal{
-        from{
-          opacity: 0;
-          clip-path: inset(0% 60% 0% 50%);
-
-        }
-        to{
-          opacity: 2;
-          clip-path: inset(0% 0% 0% 0%);
-
-        }
-     }
-  }
-
-  .carousel-1{
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    align-self: center;
-    // background-color: red;
-    // position: relative;
-    margin-top: 86px;
-    .titre{
-      max-width: 900px;
-      text-align: center;
-      font-size: 26px;
-
-      h1{
-        font-weight: 400;
-      text-emphasis:unset;
-      text-transform: lowercase;
-      text-decoration: dashed;
-        // font-family: cursive;
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-      }
+    // margin: auto;
+    z-index: 0;
     }
-  }
+    .glass{
+      background-color: rgba(182, 187, 175, 0.136);
+      backdrop-filter: blur(10px);
+      padding: 8px ;
+      border-radius: 8px;
+      z-index: 999 !important;
+      width: 75px;
+      height: 100px;
+}
+}
 
-  .carousel-containt-1{
-    display: flex;
-    flex-direction: row;
-    background-color: whitesmoke;
-    height: 100vw;
-    margin: 36px auto;
-    // max-width: 1200px;
-    justify-content: space-between;
-    height: 500px;
-    border-radius: 16px;
-    padding: 26px;
-    align-items: center;
-    overflow-y: hidden;
-    .image{
-      // background-color: red;
-      padding: 22px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      img{
-        width: 200px;
-        height: 400px;
-        margin-bottom: 26px;
-        border-radius: 12px;
-      }
-      .titre{
-
-        // border: 2px solid blue;
-
-        h3{
-          // width: 300px;
-          padding: 12px;
-          font-size: 18px;
-          // box-shadow: 0 4px 8px 2px rgba(0, 0, 0, 0.575);
-          border-left: 8px solid rgba(166, 166, 241, 0.784);
-          border-top-left-radius: 6px;
-          border-bottom-left-radius: 6px;
-          border-right: none;
-          margin-right: 36px;
-          // &::before{
-          //   content: "";
-          //   // display: flex;
-          //   height: 50px;
-          //   width: 3px;
-          //   background-color: blue;
-          // }
-        }
-      }
-
-    }
-
-    .header{
-      ul{
-        li{
-          padding: 8px;
-          margin: 8px;
-          font-weight: 800;
-          color: rgba(0, 0, 0, 0.382);
-          // background-color: red;
-          &:first{
-            color: black;
-          }
-          &:hover{
-            color: black;
-          }
-        }
-      }
-    }
-  }
-
-  .avantages{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    align-self: center;
-    flex-direction: column;
-    // background-color: red;
-    max-width: 1100px;
-    padding: 22px;
-    text-align: center;
-    padding: 16px;
-    margin: 22px auto;
-    .titre{
-      // background-color: black;
-      padding: 16px;
-      border-radius: 4px;
-      text-align: start;
-      color: black;
-      width: 85%;
-    }
-    .contain{
-      display: flex;
-      flex-wrap: wrap;
-      // background-color: red;
-      justify-content: center;
-    }
-
-    .item{
-      display: flex;
-      flex-direction: column;
-      align-self: center;
-      align-items: center;
-      background-color: rgba(59, 58, 58, 0.212);
-      padding: 16px;
-      border-radius: 12px;
-      margin: 12px;
-      width: 200px;
-      height: 340px;
-
-      h1{
-        color: rgb(0, 0, 0);
-        margin: 16px auto;
-        font-size: 18px;
-      }
-      p{
-        // max-width: 300px;
-        font-size: 12px;
-        color: black;
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-      }
-      img{
-        width: 76px;
-        margin: 8px 0px;
-      }
-      i{
-        width: 100%;
-        display: contents;
-        font-size: 76px;
-        // color: red;
-        object-fit: cover;
-        // position: relative;
-        overflow-y: none;
-        // scale: 10;
-        // display: block;
-      }
-    }
-  }
-
-  .contents{
-    h1{
-      background-color: rgba(223, 139, 139, 0.515);
-      max-width: 96vw;
-      margin: auto;
-      padding: 12px;
-      display: flex;
-      justify-content: center;
-      color: black;
-      font-size: 16px;
-      font-weight: 400;
-      // font-weight: bold;
-      text-transform: capitalize;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    }
-    .paragraphe{
-      // background-color: yellow;
-      text-align: center;
-      max-width: 98vw;
-      margin: auto;
-    }
-  }
-
+.glass-2{
+  background-color: rgba(182, 187, 175, 0.136);
+  backdrop-filter: blur(10px);
+  padding: 8px ;
+  border-radius: 8px;
+  z-index: 999 !important;
+  width: 250px;
+  // height: 300px;
 }
 
 
+// ----------------------------------------------------------------------
+// 1. SECTION BANNER (Héros)
+// ----------------------------------------------------------------------
+.banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 0;
+    overflow-y: hidden !important;
+    .contents {
+        max-width: 50%;
+        padding-right: 30px;
+
+        // Titre principal
+        .shadow-xl { // Remplacé par une classe plus expressive
+            display: inline-block;
+            font-size: 2rem;
+            font-weight: 600;
+            line-height: 1.3;
+            color: var(--color-cta-background); // Vert foncé
+            background-color: rgba(56, 164, 82, 0.1); // Vert très léger comme fond
+            padding: 15px 25px;
+            margin: 10px 0;
+            border-radius: 8px;
+
+        }
+
+        // Sous-titre/Paragraphe
+        .paragraphe {
+            font-size: 1.3rem;
+            color: var(--color-text-muted);
+            margin-top: 20px;
+        }
+
+        // --- Icônes de Fonctionnalités ---
+        .d-flex.gap-2.flex-wrap { // Conteneur de fonctionnalités
+            margin-top: 30px;
+            margin-bottom: 30px;
+
+            div { // Élément de fonctionnalité
+                background-color: var(--color-card-background);
+                border: 1px solid var(--color-border);
+                transition: all 0.3s ease;
+
+                &:hover {
+                    transform: translateY(-5px);
+                    box-shadow: 0 8px 15px rgba(56, 164, 82, 0.2);
+                    border-color: var(--color-primary-accent);
+                }
+
+                img {
+                    filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.1));
+                }
+                p {
+                    color: var(--color-text-dark);
+                    font-weight: 500;
+                }
+            }
+        }
+
+        // --- Disponibilité (Available) ---
+        .available {
+            margin-top: 40px;
+
+            .font-large {
+                font-size: 1.2rem;
+                font-weight: 600;
+                color: var(--color-text-dark);
+            }
+
+            ul li {
+                background-color: var(--color-card-background);
+                border: 1px solid var(--color-border);
+                transition: transform 0.3s ease, border-color 0.3s ease;
+
+                &:hover {
+                    transform: scale(1.1);
+                    border-color: var(--color-primary-accent);
+                    box-shadow: 0 4px 10px var(--color-shadow-subtle);
+                }
+            }
+        }
+    }
+
+    // --- Image du Téléphone avec Animation (Banner Image) ---
+    .image {
+        max-width: 50%;
+        animation: none; // Désactiver l'ancienne animation 'move' si elle est trop déroutante
+
+        img {
+            width: 100%;
+            max-width: 450px;
+            height: auto;
+            object-fit: contain;
+            // Animation subtile pour le téléphone
+            animation: phone-float 6s ease-in-out infinite;
+            // box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+    }
+}
+
+@keyframes phone-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+// ----------------------------------------------------------------------
+// 2. SECTION IMAGE ORDI (App-Image)
+// ----------------------------------------------------------------------
+.app-image {
+    margin: 80px 0;
+
+    img {
+        // Laisser votre animation GSAP/view() pour le moment, mais ajuster le style
+        width: 90%;
+        max-width: 1000px;
+        border-radius: 12px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15); // Ombre plus prononcée
+        border: 1px solid var(--color-border);
+    }
+}
+
+// ----------------------------------------------------------------------
+// 3. SECTION AVANTAGES (Pourquoi adopter Efere ?)
+// ----------------------------------------------------------------------
+.avantages-section { // Ajout d'un conteneur pour la lisibilité
+    padding: 60px 0;
+
+    .titre {
+        max-width: 800px;
+        text-align: center;
+        margin: 0 auto 40px auto;
+
+        h2 {
+            font-size: 2.5rem;
+            color: var(--color-cta-background);
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        p {
+            color: var(--color-text-dark);
+            font-size: 1.1rem;
+        }
+    }
+
+    .avantages { // Conteneur des cartes d'avantages
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 25px;
+
+        .item { // Carte d'avantage
+            width: 300px;
+            background-color: var(--color-card-background);
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 4px 15px var(--color-shadow-subtle);
+            transition: all 0.3s ease;
+
+            // Effet d'animation au survol
+            &:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 10px 30px rgba(56, 164, 82, 0.25);
+                border: 1px solid var(--color-primary-accent);
+            }
+
+            h1 {
+                font-size: 1.5rem;
+                color: var(--color-primary-accent);
+                font-weight: 600;
+                margin-bottom: 15px;
+            }
+            img {
+                width: 60px;
+                height: 60px;
+                // Coloriser les icônes SVG en vert si possible, sinon laisser
+                filter: grayscale(10%) drop-shadow(0 2px 2px rgba(0, 0, 0, 0.1));
+                margin-bottom: 15px;
+            }
+            p {
+                font-size: 0.95rem;
+                color: var(--color-text-dark);
+                line-height: 1.5;
+            }
+        }
+    }
+}
+
+
+// ----------------------------------------------------------------------
+// 4. MEDIA QUERIES (Responsivité)
+// ----------------------------------------------------------------------
+@media (max-width: 992px) {
+    .banner {
+        flex-direction: column;
+        text-align: center;
+        .contents {
+            max-width: 100%;
+            padding-right: 0;
+            order: 2; // Contenu après l'image
+            .shadow-xl {
+                font-size: 2rem;
+            }
+            .paragraphe {
+                text-align: center;
+            }
+        }
+        .image {
+            max-width: 80%;
+            margin-bottom: 30px;
+            order: 1; // Image avant le contenu
+        }
+        .contents .available {
+            // Centrer les éléments de disponibilité
+            align-items: center;
+            ul { justify-content: center; }
+        }
+    }
+}

@@ -1,0 +1,198 @@
+// Variables de couleurs globales (Rappel)
+:root {
+  --color-page-background: #f0fff4;
+  --color-card-background: #ffffff;
+  --color-text-dark: #2c5e2d;
+  --color-text-muted: #6a9c7b;
+  --color-primary-accent: #38a452;     // Vert frais principal
+  --color-secondary-accent: #7dd18e;
+  --color-cta-background: #1e7e34;     // Vert foncé pour le CTA
+  --color-shadow-subtle: rgba(0, 0, 0, 0.08);
+  --color-border: #e0e0e0;
+}
+
+.pricing-section {
+    padding: 80px 20px;
+    background-color: var(--color-page-background);
+    color: var(--color-text-dark);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+// --- En-tête de la section ---
+.header-titre {
+    text-align: center;
+    margin-bottom: 60px;
+
+    h1 {
+        font-size: 3rem;
+        font-weight: 700;
+        color: var(--color-cta-background);
+        margin-bottom: 10px;
+    }
+
+    p {
+        font-size: 1.1rem;
+        color: var(--color-text-muted);
+    }
+}
+
+// --- Grille de Tarification ---
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    overflow-y: hidden !important;
+    justify-content: center;
+    align-items: stretch; // Pour que toutes les cartes aient la même hauteur
+}
+
+// --- Style des Cartes de Prix ---
+.price-card {
+    background-color:white;
+    border-radius: 12px;
+    padding: 35px;
+    text-align: center;
+    box-shadow: 0 4px 20px var(--color-shadow-subtle);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--color-border);
+    position: relative;
+
+    // Animation de survol "Époustouflante"
+    &:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 15px 35px rgba(56, 164, 82, 0.2); // Ombre verte au survol
+        border-color: var(--color-primary-accent);
+    }
+
+    // Carte Mise en Évidence (Semestriel)
+    &.highlight {
+        border: 2px solid var(--color-primary-accent);
+        transform: scale(1.05);
+        box-shadow: 0 10px 30px rgba(56, 164, 82, 0.3);
+
+        .tag {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: var(--color-primary-accent);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+    }
+
+    .plan-header h2 {
+        font-size: 1.8rem;
+        color: var(--color-text-dark);
+        margin-bottom: 20px;
+        font-weight: 600;
+    }
+
+    .price {
+        margin-bottom: 30px;
+        .currency {
+            font-size: 1.2rem;
+            vertical-align: top;
+            margin-right: 5px;
+            color: var(--color-text-muted);
+        }
+        .amount {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--color-primary-accent);
+        }
+        .period {
+            display: block;
+            color: var(--color-text-muted);
+            font-size: 1rem;
+            margin-top: -10px;
+        }
+    }
+
+    // --- Fonctionnalités (Features) ---
+    .features {
+        text-align: left;
+        margin-bottom: 30px;
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        li {
+            padding: 8px 0;
+            border-bottom: 1px solid var(--color-border);
+            color: var(--color-text-dark);
+            font-size: 1rem;
+
+            i {
+                color: var(--color-primary-accent);
+                margin-right: 10px;
+                font-size: 1.1rem;
+            }
+            &.disabled {
+                color: var(--color-text-muted);
+                opacity: 0.6;
+                i {
+                    color: var(--color-error); // Rouge léger pour le X
+                }
+            }
+        }
+    }
+
+    // --- Bouton CTA ---
+    .cta-button {
+        display: inline-block;
+        width: 100%;
+        padding: 12px 25px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+
+        // Style par défaut (secondaire)
+        background-color: var(--color-secondary-accent);
+        color: white;
+
+        &:hover {
+            background-color: var(--color-primary-accent);
+            box-shadow: 0 5px 15px rgba(56, 164, 82, 0.4);
+        }
+
+        // Style pour le bouton principal (carte highlight)
+        &.primary-cta {
+            background-color: var(--color-cta-background); // Vert foncé
+            color: white;
+            box-shadow: 0 8px 20px rgba(30, 126, 52, 0.4);
+
+            &:hover {
+                background-color: var(--color-primary-accent);
+            }
+        }
+    }
+}
+
+// --- Responsivité ---
+@media (max-width: 768px) {
+    .header-titre h1 {
+        font-size: 2.5rem;
+    }
+    .pricing-grid {
+        grid-template-columns: 1fr;
+    }
+    .price-card {
+        max-width: 400px;
+        margin: 0 auto;
+        &.highlight {
+            transform: scale(1.02);
+        }
+    }
+}

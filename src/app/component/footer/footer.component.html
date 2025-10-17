@@ -1,41 +1,54 @@
-<div class="container animate" appScrollAnimation>
+<div class="footer-section animate" appScrollAnimation>
 
-    <div class="body">
-        <div class="logo">
-          <img src="../../../assets/Image/bg.png" alt="">
+    <div class="wave-container">
+        <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+            <defs>
+                <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+            </defs>
+            <g class="parallax">
+                <use xlink:href="#gentle-wave" x="48" y="0" />
+                <use xlink:href="#gentle-wave" x="48" y="3" />
+                <use xlink:href="#gentle-wave" x="48" y="5" />
+                <use xlink:href="#gentle-wave" x="48" y="7" />
+            </g>
+        </svg>
+    </div>
+
+    <div class="container py-5">
+        <div class="d-flex flex-column align-items-center">
+
+            <div class="logo-group mb-4">
+                <div class="logo">
+                    <img src="../../../assets/Image/bg.png" alt="Logo efere" width="50">
+                </div>
+                <div class="brand-name">
+                    <h1>efere</h1>
+                </div>
+            </div>
+
+            <div class="contact-social-group mb-4">
+                <div class="contact-info mb-3 text-center">
+                    <p class="mb-1">Contactez-nous</p>
+                    <p class="phone-number"><strong>+225 07 08 06 76 17</strong></p>
+                </div>
+
+                <div class="social-media">
+                    <a href="#" target="_blank" aria-label="WhatsApp">
+                        <i class="ri-whatsapp-line"></i>
+                    </a>
+                    <a href="#" target="_blank" aria-label="Facebook">
+                        <i class="ri-facebook-line"></i>
+                    </a>
+                    <a href="#" target="_blank" aria-label="Telegram">
+                        <i class="ri-telegram-fill"></i>
+                    </a>
+                </div>
+            </div>
+
+            <p class="copyright">
+                Copyright © 2025 **efere**. Tous droits réservés.
+            </p>
         </div>
-        <div class="title">
-          <div class="left-bar">
-
-          </div>
-          <h1>
-            Efferay
-          </h1>
-          <div class="right-bar">
-
-          </div>
-
-        </div>
-        <p>
-          Efferay est une application qui vous permet de gérer l'ensemble des activitées de votre entreprise
-        </p>
-        <div class="contact">
-          <span>
-            <p>Contact</p>
-            <p>+225 07 08 06 76 17</p>
-          </span>
-        </div>
-        <div class="social-media">
-          <span>
-            <i class="ri-whatsapp-line"></i>
-          </span>
-          <span>
-            <i class="ri-facebook-line"></i>
-          </span>
-          <span>
-            <i class="ri-telegram-fill"></i>
-          </span>
-        </div>
-      </div>
-
+    </div>
 </div>

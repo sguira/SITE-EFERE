@@ -1,84 +1,177 @@
-.container{
-  margin-top: 106px;
-  .titre{
-    text-align: center;
-    font-weight: bolder;
-    font-size: 48px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  }
-  h1{
-    font-size: 26px;
-    font-weight: 500;
-    margin: 0 12px;
-    // background-color: red;
-  }
+// Assurez-vous d'utiliser vos variables de thème vert et clair
+// :root {
+//   --color-page-background: #f0fff4;
+//   --color-card-background: #ffffff;
+//   --color-text-dark: #2c5e2d;
+//   --color-text-muted: #6a9c7b;
+//   --color-primary-accent: #38a452;
+//   --color-secondary-accent: #7dd18e;
+//   --color-shadow-subtle: rgba(0, 0, 0, 0.08);
+//   --color-border: #e0e0e0;
+// }
 
-  .contain{
-    // padding: 36px;
-    display: grid;
-    // flex-direction: ;
-    align-items: center;
-    justify-content: center;
-    // min-height: 200vh;
-    overflow: hidden;
-    .dev{
-      background-color: rgba(1, 1, 1, 0.079);
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      padding: 32px;
-      // background-color: red;
-      justify-content: space-between;
-      align-items: center;
-      align-content: space-between;
-      border-radius: 11px;
-      // margin: 86px auto;
-      margin: 18px 18px;
-      // background-color: red;
-
-      .image{
-        // margin: 12px 26px;
-        // background-color: rgba(255, 255, 255, 0.238);
-        padding: 22px;
-        border-radius: 90px;
-        border: 2px solid rgba(255, 255, 255, 0.24);
-        img{
-          width: 90px;
-
-          background-color: unset;
+.container {
+    padding: 0 20px;
+    max-width: 1200px;
+    margin: 80px auto; // Centrage et marge
+    overflow-y: hidden !important;
+    .titre {
+        text-align: center;
+        font-weight: 700;
+        font-size: 3rem;
+        color: var(--color-text-dark);
+        margin-bottom: 50px;
+        position: relative;
+        // Ligne décorative sous le titre
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--color-primary-accent);
+            border-radius: 2px;
         }
-      }
-
-      .body{
-        // background-color: red;
-        margin-left: 26px;
-        // animation: shower auto linear;
-        // animation-timeline: view();
-        // animation-range: entry 25% contain 100%;
-        h1{
-          color: black;
-          font-weight: bolder;
-        }
-        p{
-          max-width: 500px;
-          // color: white;
-        }
-      }
     }
-  }
+
+    .contain {
+        display: flex;
+        flex-direction: column;
+        gap: 40px; // Espacement vertical entre les cartes
+
+        .feature-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: var(--color-card-background); // Fond blanc pour la carte
+            border-radius: 12px;
+            padding: 40px;
+            gap: 40px;
+            box-shadow: 0 6px 15px var(--color-shadow-subtle); // Ombre élégante
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+            // Effet subtil au survol
+            &:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px rgba(56, 164, 82, 0.15);
+            }
+
+            // Disposition alternée (pour les blocs pairs ou ceux avec la classe 'reverse')
+            &.reverse {
+                flex-direction: row-reverse;
+                // Ajuster la marge pour la cohérence
+                .body-content {
+                    margin-left: 0;
+                    margin-right: 26px; // Marge similaire à la normale
+                }
+            }
+
+
+            .image-wrapper {
+                flex-shrink: 0; // Empêche l'image de rétrécir
+                width: 150px; // Taille fixe pour les icônes/images
+                height: 150px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                // Conteneur d'icône plus élégant
+                background-color: var(--color-secondary-accent); // Fond vert clair
+                border-radius: 50%;
+                padding: 15px;
+                box-shadow: 0 0 0 10px rgba(56, 164, 82, 0.1); // Anneau d'ombre/couleur subtil
+
+                img {
+                    width: 90px;
+                    height: 90px;
+                    object-fit: contain;
+                    filter: invert(1); // Rendre les icônes blanches pour le contraste sur le fond vert
+                }
+            }
+
+            .body-content {
+                flex-grow: 1;
+                margin-left: 26px; // Marge pour séparer de l'image
+
+                h1 {
+                    font-size: 2rem;
+                    font-weight: 600;
+                    color: var(--color-primary-accent); // Titre en vert vibrant
+                    margin-bottom: 10px;
+
+                    // Ligne d'accentuation rapide sous le titre du bloc
+                    &::after {
+                        content: '';
+                        display: block;
+                        width: 40px;
+                        height: 3px;
+                        background-color: var(--color-text-dark);
+                        margin-top: 5px;
+                        border-radius: 1.5px;
+                    }
+                }
+
+                p {
+                    max-width: 100%;
+                    color: var(--color-text-dark);
+                    line-height: 1.6;
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
 }
 
 
+// --- MEDIA QUERIES pour la Responsivité ---
+@media (max-width: 992px) {
+    .container {
+        .titre {
+            font-size: 2.5rem;
+        }
+        .contain .feature-card {
+            flex-direction: column; // Tous les blocs s'empilent
+            text-align: center;
 
-// @keyframes shower {
-//   from{
-//     opacity: 0;
-//     transform: scale(0);
-//   }
-//   to{
-//     opacity: 1;
-//     transform: scale(1);
-//   }
-// }
+            .image-wrapper {
+                margin-bottom: 20px;
+            }
 
+            .body-content {
+                margin-left: 0 !important;
+                margin-right: 0 !important;
 
+                h1 {
+                    &::after {
+                        margin: 5px auto 0 auto; // Centrer la ligne d'accent
+                    }
+                }
+            }
+
+            // Réinitialiser la direction pour tous en mobile
+            &.reverse {
+                flex-direction: column;
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        .titre {
+            font-size: 2rem;
+        }
+        .contain .feature-card {
+            padding: 25px;
+            .image-wrapper {
+                width: 120px;
+                height: 120px;
+                img {
+                    width: 70px;
+                    height: 70px;
+                }
+            }
+        }
+    }
+}

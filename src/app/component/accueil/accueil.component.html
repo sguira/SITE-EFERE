@@ -1,40 +1,50 @@
 <div class="container">
-  <div class="banner animate" appScrollAnimation>
-    <div class="contents">
-      <h1>
-        Gérez Toutes les activitées de votre entreprise de façon efficace avec un Seul Outil Efferay
-      </h1>
+  <div class="banner animate row justify-content-between" appScrollAnimation>
+    <div class="contents col-md-6 col-12 d-flex flex-column align-items-center align-items-md-start justify-content-center">
+      <div class="d-flex flex-column">
+        <span class="shadow-xl  p-3 m-1 rounded">
+        Gérez Toutes les activitées de votre entreprise de façon efficace avec un Seul Outil Efere
+      </span>
       <p class="paragraphe">
-        Qu'est ce que vous pouvez faire avec Efferay
+        Qu'est ce que vous pouvez faire avec efere
       </p>
+      </div>
 
-      <div class="fonctionnalite">
-        <div class="item" *ngFor="let item of fonctionnalite">
-          <img [src]="item.image" alt="Image">
-          <p>{{item.texte}}</p>
+      <div class="d-flex flex-row justify-content-between align-items-center fonctionnalites flex-wrap">
+
+        <div class="row g-4"  >
+          <div class="wrapper p-0 col-xl-3 col-4" *ngFor="let item of fonctionnalite">
+            <div class="bar"></div>
+            <div class="glass d-flex flex-column justify-content-center align-items-center p-2 text-center">
+              <div class="badge-icon mb-2">
+                <i [class]="item.icon" style="font-size: 22px;" ></i>
+              </div>
+              <p class="font-thin font-normal text-align" style="font-size: 11px;">{{item.texte}}</p>
+            </div>
+          </div>
         </div>
       </div>
-      <!-- <div class="button">
-        <button>commencer sur Efferay</button>
-      </div> -->
-      <div class="available">
-        Disponible sur
-        <ul>
-          <li *ngFor="let item of availables">
-            <img [src]="item.icon" [alt]="item.texte">
+
+      <div class="available d-flex flex-column align-items-center ml-sm-5 gap-3 mt-5">
+        <div class="font-large">
+          Disponible sur
+        </div>
+        <ul class="d-flex gap-2 p-0 m-0 list-unstyled">
+          <li *ngFor="let item of availables" class=" shadow cursor-pointer rounded p-3 ">
+            <img [src]="item.icon" alt="item.texte" width="25" />
           </li>
         </ul>
 
       </div>
     </div>
-    <div class="image">
+    <div class="image col-md-4 col-12 d-flex justify-content-center align-items-center">
       <img src="../../../assets/Image/phone22.png" alt="">
 
     </div>
   </div>
 
-  <div class="app-image animate" id="image-ordi" appScrollAnimation>
-    <img src="../../../assets/Image/mac 1.png" alt="">
+  <div class="d-flex justify-content-center mx-auto d-sm-block d-none w-100  align-items-center" id="image-ordi" appScrollAnimation>
+    <img src="../../../assets/Image/mac 1.png" class="mx-auto" alt="">
   </div>
 
 
@@ -43,52 +53,26 @@
   </div>
 
 
-  <div class="avantages animate" appScrollAnimation>
+  <div class="animate mt-5 d-flex flex-column justify-center  align-items-center" appScrollAnimation>
     <div class="titre">
       <h2>
-        Avantages d'utiliser notre système
+        Pourquoi adopter Efere ?
       </h2>
       <p>
-        Avec Efferay, vous bénéficiez d'une solution complète et intégrée pour gérer tous les aspects de votre entreprise. Nos fonctionnalités avancées vous permettent de
+        Avec efere, vous bénéficiez d'une solution complète et intégrée pour gérer tous les aspects de votre entreprise. Nos fonctionnalités avancées vous permettent de
       </p>
     </div>
-    <div class="contain">
-      <div class="item">
-        <h1>Gain de temps considérable</h1>
-        <img src="../../../assets/icons/clock.svg" alt="">
-        <p>
-          Avec Efferay, simplifiez et automatisez vos tâches quotidiennes de gestion de stock et de comptabilité. Libérez-vous des processus chronophages et concentrez-vous sur le développement de votre entreprise. Gagnez en efficacité et productivité dès aujourd'hui.
-        </p>
+    <div class="row">
+      <div class="col-xl-3 col-12 g-3 wrapper" *ngFor="let item of avantages">
+        <div class="bar"></div>
+        <div class="d-flex flex-column justify-content-center align-items-center text-center p-3 glass-2">
+          <h1>{{item.titre}}</h1>
+          <img src="../../../assets/icons/clock.svg" alt="" width="50">
+          <p>
+            Avec efere, simplifiez et automatisez vos tâches quotidiennes de gestion de stock et de comptabilité. Libérez-vous des processus chronophages et concentrez-vous sur le développement de votre entreprise. Gagnez en efficacité et productivité dès aujourd'hui.
+          </p>
+        </div>
       </div>
-
-      <div class="item">
-        <h1>Reduction des erreurs</h1>
-        <img src="../../../assets/icons/lock.svg" alt="">
-        <p>
-          Avec Efferay, simplifiez et automatisez vos tâches quotidiennes de gestion de stock et de comptabilité. Libérez-vous des processus chronophages et concentrez-vous sur le développement de votre entreprise. Gagnez en efficacité et productivité dès aujourd'hui.
-        </p>
-      </div>
-      <div class="item">
-        <h1>Satisfaction des clients</h1>
-        <i class="ri-emotion-happy-line"></i>
-        <p>
-          Avec Efferay, offrez à vos clients une expérience fluide et professionnelle. Gérez leurs commandes avec précision, répondez rapidement à leurs besoins, et maintenez des relations solides. Des clients satisfaits sont la clé de votre succès.
-        </p>
-      </div>
-      <div class="item">
-        <h1>Optimiser la Gestion de vos Stocks</h1>
-        <i class="ri-arrow-up-circle-line"></i>
-        <p>
-          Avec Efferay, surveillez et contrôlez vos stocks en temps réel. Évitez les ruptures et les surstockages grâce à des alertes automatisées et des rapports détaillés. Gérez vos inventaires de manière efficace et assurez une disponibilité constante de vos produits.
-        </p>
-      </div>
-      <!-- <div class="item">
-        <h1>Optimiser la Gestion de vos Stocks</h1>
-        <i class="ri-database-2-fill"></i>
-        <p>
-          Avec Efferay, surveillez et contrôlez vos stocks en temps réel. Évitez les ruptures et les surstockages grâce à des alertes automatisées et des rapports détaillés. Gérez vos inventaires de manière efficace et assurez une disponibilité constante de vos produits.
-        </p>
-      </div> -->
     </div>
 
   </div>

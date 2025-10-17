@@ -27,6 +27,15 @@ export class HeaderComponent {
     this.isOpened=!this.isOpened;
   }
 
+  menuItems=[
+    {name:"Accueil",link:""},
+    {name:"Fonctionnalités",link:"fonctionnalites"},
+    {name:"Tarifs",link:"tarifs"},
+    {name:"Contact",link:"contact"},
+    {name:"Espace Client",link:"",isButton:true},
+    {name:"Apropos",link:"/apropos"}
+  ]
+
   openSpace(){
     window.open("https://efferay-web.onrender.com/","blank")
   }

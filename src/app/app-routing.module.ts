@@ -8,11 +8,16 @@ import { AproposComponent } from './component/apropos/apropos.component';
 import { ConnexionComponent } from './component/connexion/connexion.component';
 import { FaqComponent } from './component/faq/faq.component';
 import { UserDetailsComponent } from './component/admin/user-details/user-details.component';
+import { TarifsComponent } from './components/tarifs/tarifs.component';
 
 const routes: Routes = [
   {
     path:'',
     component:AccueilComponent
+  },
+  {
+    path:'tarifs',
+    component:TarifsComponent
   },
   {
     path:'contact',

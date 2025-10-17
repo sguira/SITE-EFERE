@@ -36,7 +36,9 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserDetailsComponent } from './component/admin/user-details/user-details.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
-import { SidebarComponent } from './component/admin/sidebar/sidebar.component'
+import { SidebarComponent } from './component/admin/sidebar/sidebar.component';
+import { Header2Component } from './component/header2/header2.component';
+import { TarifsComponent } from './components/tarifs/tarifs.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -56,7 +58,9 @@ import { SidebarComponent } from './component/admin/sidebar/sidebar.component'
     SuscribeComponent,
     AccueilComponent,
     UserDetailsComponent,
-    SidebarComponent
+    SidebarComponent,
+    Header2Component,
+    TarifsComponent
 
   ],
   imports: [

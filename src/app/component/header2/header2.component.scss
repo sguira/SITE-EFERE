@@ -1,0 +1,84 @@
+
+container-fluid {
+    position: sticky !important;
+    top: 0;
+    height: 55px;
+}
+
+
+// 2. Styles de la Navbar
+.navbar {
+  // Utilisation de la couleur de surface et non de la couleur primaire de votre ancienne variable
+  background-color: rgb(8, 99, 58) !important; // Fond rouge pour la navbar
+
+  // Ajouter une ombre subtile mais visible pour donner de la profondeur
+  box-shadow: 0 4px 12px var(--color-shadow);
+  transition: background-color 0.3s ease-in-out; // Transition pour un effet plus doux
+
+  // 3. Style du Logo
+  .navbar-brand {
+    color: var(--color-text-light) !important;
+    font-weight: 700; // Gras
+    font-size: 1.5rem; // Taille plus grande
+    letter-spacing: 1px; // Espacement des lettres
+  }
+
+  // 4. Styles des Liens de Navigation
+  .nav-link {
+    color: var(--color-text-muted) !important; // Couleur de base
+    font-weight: 500;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    padding-bottom: 8px !important; // Espace pour l'effet de soulignement
+    // background-color: red !important;
+
+    &:hover {
+      color: var(--color-primary-accent) !important; // Couleur vibrante au survol
+    }
+
+    // Effet "active" : soulignement accentué
+    &.active {
+      color: var(--color-primary-accent) !important;
+      border-bottom: 5px solid var(--color-primary-accent);
+      height: 100%;
+      border-radius: 2px;
+      background: linear-gradient(90deg, rgba(56, 164, 81, 0.062) 0%, rgba(203, 225, 208, 0.144) 100%) !important;
+    }
+  }
+
+  // 5. Style du Bouton (CTA - Mon Espace)
+  .navbar-text button {
+    // Bouton de style "Ghost" (transparent) pour l'esthétique Dark Theme
+    background-color: transparent;
+    border: 2px solid var(--color-primary-accent); // Bordure accentuée
+    color: var(--color-primary-accent);
+    padding: 8px 20px;
+    border-radius: 50px; // Arrondi complet pour un look moderne (Pill-shape)
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+
+    // Effet au survol : Remplissage de la couleur accent
+    &:hover {
+      background-color: var(--color-primary-accent);
+      color: var(--color-dark); // Le texte devient sombre sur le fond clair
+      transform: translateY(-2px); // Léger déplacement vers le haut
+      box-shadow: 0 4px 10px rgba(0, 188, 212, 0.5); // Ombre pour l'effet pop
+    }
+  }
+
+  // Style du Toggle Button pour le mode sombre
+  .navbar-toggler {
+      border-color: var(--color-primary-accent) !important; // Bordure de l'icône
+      .navbar-toggler-icon {
+          // Utilise un filtre pour rendre l'icône (le hamburger) blanche
+          filter: invert(1);
+      }
+  }
+}
+
+// 6. Suggestion d'une police plus impactante (à importer dans votre index.html ou styles.scss)
+// body {
+//     font-family: 'Poppins', sans-serif; // Ou 'Montserrat', ou 'Inter'
+//     background-color: var(--color-dark);
+// }

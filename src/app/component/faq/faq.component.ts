@@ -16,7 +16,7 @@ export class FaqComponent {
 
  faqs:any[]=[
   {
-    titre:'Premier pas avec Efferay',
+    titre:'Premier pas avec efere',
     description:'Pour utiliser Notre application pour la gestion de votre entreprise, vous avez la possibilité d\'installer l\'application sur toutes les plateformes',
     contents:[
       "Après avoir installer l'application",
@@ -38,7 +38,7 @@ export class FaqComponent {
     ]
   },
   {
-    titre:'Bien commencez avec Efferay',
+    titre:'Bien commencez avec efere',
     description:"Après la création de votre compte pour utilisez de manière efficace nous vous conseillons de faire ces étapes suivantes:",
     contents:[
       "Rendez vous la partie gestion des stock dépuis le menu principal.",
@@ -291,7 +291,7 @@ export class FaqComponent {
   },
   {
     titre:"Comment s'abonner ?",
-    description:"Pour utiliser toutes les fonctionnalité de l'application Efferay vous aurez bésoin d'un abonnement dans cette section on vous montre comment faire cet abonnement",
+    description:"Pour utiliser toutes les fonctionnalité de l'application efere vous aurez bésoin d'un abonnement dans cette section on vous montre comment faire cet abonnement",
     contents:[
      "Cliquer sur le button Menu depuis la page d'accueil, pour sélectionner le button Paramètre.",
      "Lorsque vous êtes dans la partie paramète sélectionner le button Abonnement",
