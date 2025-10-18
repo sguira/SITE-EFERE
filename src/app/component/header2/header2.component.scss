@@ -4,7 +4,9 @@ container-fluid {
     top: 0;
     height: 55px;
 }
-
+.navbar {
+  z-index: 1030; /* supérieur aux autres éléments */
+}
 
 // 2. Styles de la Navbar
 .navbar {
@@ -71,14 +73,9 @@ container-fluid {
   .navbar-toggler {
       border-color: var(--color-primary-accent) !important; // Bordure de l'icône
       .navbar-toggler-icon {
-          // Utilise un filtre pour rendre l'icône (le hamburger) blanche
           filter: invert(1);
       }
   }
 }
 
-// 6. Suggestion d'une police plus impactante (à importer dans votre index.html ou styles.scss)
-// body {
-//     font-family: 'Poppins', sans-serif; // Ou 'Montserrat', ou 'Inter'
-//     background-color: var(--color-dark);
-// }
+

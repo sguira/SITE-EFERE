@@ -1,43 +1,53 @@
-<div class="container">
+<div class="faq-page-container">
 
-    <div class="image">
-        <img src="../../../assets/Image/faq2.svg" alt="Illustration de support et FAQ">
-    </div>
+    <header class="faq-header">
+        <!-- <div class="illustration-wrapper d-none d-md-block">
+            <img src="../../../assets/Image/faq2.svg" alt="Illustration de support et FAQ" class="header-illustration">
+        </div> -->
+        <div class="title-wrapper">
+            <h1 class="page-title">
+                Réponses aux questions de base (FAQ)
+            </h1>
+            <p class="subtitle">Trouvez des solutions rapides à vos questions les plus fréquentes.</p>
+        </div>
+    </header>
 
-    <div class="titre">
-        <h1>
-            Réponses aux questions de base (FAQ)
-        </h1>
-    </div>
-
-    <div class="faqs">
+    <div class="faqs-list">
         <mat-accordion class="accordion-list">
-            <mat-expansion-panel *ngFor="let item of faqs" class="item">
-                <mat-expansion-panel-header>
+            <mat-expansion-panel
+                *ngFor="let item of faqs; let i = index"
+                class="faq-item"
+                [@fadeInUp]="i"
+            >
+                <mat-expansion-panel-header class="faq-header-title">
                     <mat-panel-title>
-                        {{ item.titre }}
+                        <mat-icon color="primary">question_answer</mat-icon>
+                        <span class="question-text">{{ item.titre }}</span>
                     </mat-panel-title>
                 </mat-expansion-panel-header>
 
-                <mat-list>
-                    <mat-panel-description>
+                <div class="faq-content-body">
+                    <mat-panel-description class="faq-description">
                         {{ item.description }}
                     </mat-panel-description>
 
-                    <p *ngFor="let detail of item.contents">
+                    <p *ngFor="let detail of item.contents" class="faq-detail-paragraph">
                         {{ detail }}
                     </p>
 
-                    <div class="images" *ngIf="item.illustrations && item.illustrations.length > 0">
-                        <h2>
+                    <div class="faq-illustrations" *ngIf="item.illustrations && item.illustrations.length > 0">
+                        <h3 class="illustrations-title">
                             Quelques images d'illustrations
-                        </h2>
-                        <div class="image" *ngFor="let illustraion of item.illustrations">
-                            <label> {{illustraion.titre}} </label>
-                            <img [src]="illustraion.image" alt="Illustration pour {{illustraion.titre}}">
+                        </h3>
+                        <div class="illustration-gallery">
+                            <div class="illustration-item" *ngFor="let illustraion of item.illustrations">
+                                <label class="illustration-caption"> {{illustraion.titre}} </label>
+                                <img [src]="illustraion.image" alt="Illustration pour {{illustraion.titre}}">
+                            </div>
                         </div>
                     </div>
-                </mat-list>
+                </div>
+
             </mat-expansion-panel>
         </mat-accordion>
     </div>

@@ -1,225 +1,153 @@
-// Variables de couleurs pour un thème moderne
-$color-primary: #1e88e5; // Un bleu Google Material pour l'accent
-$color-text-dark: #212121; // Texte sombre principal
-$color-text-muted: #757575; // Texte secondaire
-$color-background-light: #f5f5f5; // Fond de la page (si besoin)
-$color-card-background: #ffffff; // Fond de l'accordéon
-$color-border-subtle: #e0e0e0; // Bordure très légère
-$color-content-bg: #fafafa; // Fond du contenu des réponses
-$color-image-border: #bbdefb; // Bordure des illustrations
+// Variables (à adapter à votre thème principal)
+$primary-color: #151515; // Exemple : Bleu vif
+$card-background: #ffffff; // Fond des panneaux d'accordéon
 
-.container {
-  // Le conteneur principal sera centré et aura un peu d'espace
-  margin: 80px auto 40px auto;
-  max-width: 1200px;
-  padding: 20px;
-
-  // Amélioration de l'image principale
-  .image {
-    width: 100%;
-    max-width: 500px; // Taille maximale de l'image FAQ en haut
-    margin: 0 auto 40px auto;
-    img {
-      width: 100%;
-      height: auto;
-      object-fit: contain;
-    }
-  }
-
-  // Amélioration du titre
-  .titre {
-    // Retrait du background noir brut pour un look plus élégant
-    background-color: transparent;
-    text-align: center;
-    padding: 10px 0 40px 0;
-
-    h1 {
-      font-size: 2.8rem;
-      color: $color-text-dark; // Texte sombre sur fond clair
-      font-weight: 700;
-      font-family: 'Roboto', sans-serif; // Utiliser une police moderne (à importer)
-      position: relative;
-      display: inline-block;
-
-      // Soulignement animé
-      &::after {
-        content: '';
-        position: absolute;
-        bottom: -10px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 60px;
-        height: 4px;
-        background-color: $color-primary;
-        border-radius: 2px;
-      }
-    }
-  }
-
-  // Zone des FAQs
-  .faqs {
-    display: flex;
-    justify-content: center;
-    width: 100%; // Prend toute la largeur du conteneur
-    box-sizing: border-box;
-
-    .accordion-list {
-      width: 100%;
-      // Transformation en une carte élevée
-      background-color: $color-card-background;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); // Ombre douce
-      padding: 0; // Le padding sera géré par les items
-
-      .item {
-        margin: 0;
-        border: none;
-        border-bottom: 1px solid $color-border-subtle;
-        transition: background-color 0.3s ease;
-
-        &:last-child {
-          border-bottom: none;
-          border-bottom-left-radius: 12px;
-          border-bottom-right-radius: 12px;
-        }
-
-        // Effet au survol des questions
-        &:hover {
-            background-color: $color-background-light;
-        }
-
-        mat-expansion-panel-header {
-          padding: 20px 30px;
-          height: auto; // Hauteur automatique
-          font-size: 1.15rem;
-          font-weight: 500;
-          color: $color-text-dark;
-          text-transform: none; // Retrait de l'uppercase pour une meilleure lecture
-          transition: color 0.3s ease;
-
-          mat-panel-title {
-              // Couleur du titre
-              color: $color-text-dark;
-              font-weight: 600;
-          }
-
-          // Style de l'icône d'expansion (l'icône Chevron/Arrow)
-          .mat-expansion-indicator::after {
-              color: $color-primary;
-              transition: transform 0.3s ease;
-          }
-          &.mat-expanded {
-              // Style de la question ouverte
-              mat-panel-title {
-                  color: $color-primary;
-              }
-          }
-        }
-
-        mat-list {
-          padding: 20px 30px 30px 30px;
-          border-top: 1px dashed $color-border-subtle; // Séparateur
-          background-color: $color-content-bg; // Fond du contenu
-
-          mat-panel-description {
-              font-size: 1rem;
-              color: $color-text-muted;
-              margin-bottom: 15px;
-              line-height: 1.6;
-          }
-
-          p {
-            max-width: 100%;
-            padding: 8px 12px;
-            margin: 5px 0;
-            border: none; // Suppression de la bordure
-            background-color: transparent; // Rendre le fond transparent
-            color: $color-text-dark; // Texte sombre
-            font-size: 0.95rem;
-            line-height: 1.5;
-
-            &::before {
-              content: '→'; // Nouvelle puce plus discrète
-              margin-right: 10px;
-              color: $color-primary; // Couleur accent
-              font-weight: bold;
-            }
-          }
-        }
-
-        .images {
-          // Section des illustrations
-          background-color: transparent; // Fond transparent
-          padding: 30px 0;
-          margin-top: 20px;
-          border-top: 1px solid $color-border-subtle;
-
-          h2 {
-            font-size: 1.2rem;
-            font-weight: 500;
-            color: $color-text-dark;
-            margin-bottom: 25px;
-            padding: 0;
-            text-align: left; // Alignement à gauche
-          }
-
-          .image {
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            max-width: 300px; // Taille des images d'illustration dans la réponse
-            margin: 15px;
-            border: 1px solid $color-image-border; // Bordure plus claire
-            padding: 8px;
-            border-radius: 8px;
-            overflow: hidden; // S'assurer que l'image reste dans le conteneur
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-
-            label {
-              padding: 8px;
-              background-color: $color-primary;
-              color: white;
-              font-size: 0.85rem;
-              border-radius: 4px 4px 0 0;
-              margin: -8px -8px 8px -8px; // Remonte la label pour qu'elle touche le haut
-              text-align: center;
-            }
-            img {
-                width: 100%;
-                height: auto;
-                object-fit: contain;
-                border-radius: 4px;
-            }
-          }
-        }
-      }
-    }
-  }
+.faq-page-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    min-height: 100vh;
 }
 
+// --- En-tête ---
+.faq-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 0;
+    margin-bottom: 30px;
+    border-bottom: 2px solid rgba($primary-color, 0.1);
 
-// Media Queries pour l'adaptabilité
-@media screen and (max-width: 768px) {
-  .container {
-    margin-top: 40px;
-    padding: 10px;
-
-    .titre h1 {
-      font-size: 2rem;
-      padding-bottom: 30px;
+    .title-wrapper {
+        flex-grow: 1;
     }
 
-    .faqs .accordion-list .item {
-      mat-expansion-panel-header {
-        padding: 15px 20px;
-        font-size: 1rem;
-      }
-      mat-list {
-        padding: 10px 20px 20px 20px;
-        .images {
-          justify-content: space-around;
+    .page-title {
+        font-size: 2.5em;
+        color: #343a40;
+        margin-bottom: 5px;
+        font-weight: 700;
+    }
+
+    .subtitle {
+        font-size: 1.1em;
+        color: #6c757d;
+    }
+
+    .illustration-wrapper {
+        margin-right: 40px;
+        flex-shrink: 0;
+        .header-illustration {
+            width: 150px; // Taille de l'illustration
+            height: auto;
         }
-      }
     }
-  }
+}
+
+// --- Liste des Questions (Accordion) ---
+.faqs-list {
+    .accordion-list {
+        display: block; // Assure que la mat-accordion prend toute la largeur
+    }
+
+    .faq-item {
+        margin-bottom: 15px;
+        border-radius: 12px;
+        overflow: hidden; // Important pour l'ombre
+        background-color: $card-background;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); // Ombre élégante
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        &:hover {
+            transform: translateY(-2px); // Petit effet de soulèvement au survol
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+        }
+
+        // Style pour l'en-tête de la question
+        .faq-header-title {
+            padding: 15px 20px;
+            height: auto !important; // Surcharge la hauteur par défaut de Material
+
+            .mat-panel-title {
+                display: flex;
+                align-items: center;
+                font-weight: 600;
+                color: #343a40;
+                font-size: 1.1em;
+            }
+
+            mat-icon {
+                margin-right: 15px;
+                color: $primary-color; // Couleur d'icône d'accentuation
+            }
+        }
+
+        // Contenu de la réponse
+        .faq-content-body {
+            padding: 0 20px 20px 20px; // Aligné avec l'en-tête
+            border-top: 1px solid #e9ecef; // Séparateur discret
+
+            .faq-description, .faq-detail-paragraph {
+                color: #495057;
+                line-height: 1.6;
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+    // Règle pour l'icône de l'accordéon (la flèche)
+    // Rend la flèche plus visible et stylisée
+    .mat-expansion-indicator::after {
+        color: $primary-color;
+        border-width: 0 2px 2px 0 !important; // Rendre la flèche plus épaisse
+    }
+
+    // --- Illustrations ---
+    .faq-illustrations {
+        margin-top: 20px;
+        padding-top: 15px;
+        border-top: 1px dashed #ced4da;
+
+        .illustrations-title {
+            font-size: 1em;
+            color: #6c757d;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .illustration-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+
+            .illustration-item {
+                flex: 1 1 200px;
+                display: flex;
+                flex-direction: column;
+                border: 1px solid #dee2e6;
+                border-radius: 8px;
+                overflow: hidden;
+
+                .illustration-caption {
+                    text-align: center;
+                    font-size: 0.9em;
+                    color: #495057;
+                    padding: 5px;
+                    background-color: #f1f3f5;
+                }
+
+                img {
+                    width: 100%;
+                    height: auto;
+                    display: block;
+                    // Ajout d'une transition pour le zoom (micro-animation au survol)
+                    transition: transform 0.4s ease;
+
+                    &:hover {
+                        transform: scale(1.05);
+                    }
+                }
+            }
+        }
+    }
 }
