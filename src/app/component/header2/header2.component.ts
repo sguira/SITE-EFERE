@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+declare var bootstrap: any;
 
 @Component({
   selector: 'app-header2',
@@ -37,5 +38,13 @@ export class Header2Component {
 
   gotoEspaceClient() {
     window.open('https://espace.efere.space', '_blank');
+  }
+
+  closeNavbar() {
+    const navbar = document.querySelector('.navbar-collapse');
+    if (navbar && navbar.classList.contains('show')) {
+      const bsCollapse = new bootstrap.Collapse(navbar, { toggle: true });
+      bsCollapse.hide();
+    }
   }
 }

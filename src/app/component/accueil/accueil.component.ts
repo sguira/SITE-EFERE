@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+declare var bootstrap: any;
 
 @Component({
   selector: 'app-accueil',
@@ -86,26 +87,58 @@ export class AccueilComponent {
     {
       titre: 'Gain de temps considérable',
       description:
-        "Avec efere, simplifiez et automatisez vos tâches quotidiennes de gestion de stock et de comptabilité. Libérez-vous des processus chronophages et concentrez-vous sur le développement de votre entreprise. Gagnez en efficacité et productivité dès aujourd'hui.",
-      icon: '../../../assets/icons/clock.svg',
+        'Automatisez vos tâches de gestion de stocks, de facturation et de comptabilité avec Efere. Dites adieu aux longues heures de saisie manuelle et concentrez-vous sur ce qui compte vraiment : la croissance de votre entreprise.',
+      icon: 'bi bi-clock-history',
     },
     {
-      titre: 'Gain de temps considérable',
+      titre: 'Réduction des erreurs',
       description:
-        "Avec efere, simplifiez et automatisez vos tâches quotidiennes de gestion de stock et de comptabilité. Libérez-vous des processus chronophages et concentrez-vous sur le développement de votre entreprise. Gagnez en efficacité et productivité dès aujourd'hui.",
-      icon: '../../../assets/icons/clock.svg',
+        'Grâce à l’automatisation et aux contrôles intégrés, Efere minimise les erreurs humaines dans la saisie, le calcul des totaux et la gestion des stocks. Vos données sont précises et fiables à tout moment.',
+      icon: 'bi bi-shield-check',
     },
     {
-      titre: 'Reduction des erreurs',
+      titre: 'Vision globale et en temps réel',
       description:
-        "Avec efere, simplifiez et automatisez vos tâches quotidiennes de gestion de stock et de comptabilité. Libérez-vous des processus chronophages et concentrez-vous sur le développement de votre entreprise. Gagnez en efficacité et productivité dès aujourd'hui.",
-      icon: '../../../assets/icons/lock.svg',
+        'Suivez en temps réel vos ventes, vos achats, vos stocks et votre trésorerie. Les tableaux de bord intelligents d’Efere vous offrent une vue claire pour des décisions plus rapides et plus efficaces.',
+      icon: 'bi bi-graph-up',
     },
     {
-      titre: 'Satisfaction des clients',
+      titre: 'Satisfaction client renforcée',
       description:
-        'Avec efere, offrez à vos clients une expérience fluide et professionnelle. Gérez leurs commandes avec précision, répondez rapidement à leurs besoins, et maintenez des relations solides. Des clients satisfaits sont la clé de votre succès.',
-      icon: '../../../assets/icons/lock.svg',
+        'Améliorez votre réactivité et offrez une meilleure expérience à vos clients grâce à une gestion fluide des commandes, livraisons et factures. Des clients satisfaits, c’est une entreprise qui prospère.',
+      icon: 'bi bi-emoji-smile',
+    },
+    {
+      titre: 'Sécurité et confidentialité des données',
+      description:
+        'Efere protège vos informations sensibles grâce à des sauvegardes automatiques et un chiffrement sécurisé. Vos données restent confidentielles et accessibles uniquement aux utilisateurs autorisés.',
+      icon: 'bi bi-lock',
+    },
+    {
+      titre: 'Accessibilité multiplateforme',
+      description:
+        'Accédez à votre application depuis n’importe où : ordinateur, tablette ou smartphone. Efere s’adapte à votre mode de travail, que vous soyez au bureau ou en déplacement.',
+      icon: 'bi bi-laptop',
+    },
+    {
+      titre: 'Analyse et reporting intelligents',
+      description:
+        'Générez automatiquement des rapports détaillés sur vos ventes, achats et performances. Transformez vos données en décisions stratégiques grâce à des analyses précises et intuitives.',
+      icon: 'bi bi-bar-chart-line',
+    },
+    {
+      titre: 'Collaboration simplifiée',
+      description:
+        'Donnez à vos collaborateurs les bons outils pour travailler efficacement ensemble. Efere permet de gérer plusieurs utilisateurs, rôles et accès pour une meilleure organisation interne.',
+      icon: 'bi bi-people',
     },
   ];
+
+  closeNavbar() {
+    const navbar = document.querySelector('.navbar-collapse');
+    if (navbar && navbar.classList.contains('show')) {
+      const bsCollapse = new bootstrap.Collapse(navbar, { toggle: true });
+      bsCollapse.hide();
+    }
+  }
 }
