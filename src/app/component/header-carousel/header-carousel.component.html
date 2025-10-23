@@ -6,7 +6,7 @@
                 Gérez vos clients, fournisseurs, stocks, comptabilité et commandes en un seul endroit.
             </h2>
             <p>
-                efere combine tous les éléments essentiels dans une seule application. Planifiez, vérifiez et rationalisez sans effort. Échangez l'encombrement des applications contre une solution simple et organisée avec efere !
+              efere combine tous les éléments essentiels dans une seule application. Planifiez, vérifiez et rationalisez sans effort. Échangez l'encombrement des applications contre une solution simple et organisée avec efere !
             </p>
         </div>
 
@@ -15,7 +15,7 @@
             <div class="tabs-header">
                 <ul class="d-flex justify-content-center align-items-center">
                     <li *ngFor="let item of carouselBody;let i=index"
-                        class="feature-tab"
+                        class="feature-tab text-black"
                         [ngClass]="i === indexCarousel ? 'active-tab' : ''"
                         (click)="selectCarousel(i)">
                         {{item.titre}}
@@ -32,7 +32,7 @@
 
                     <div class="col-md-6 d-flex flex-column text-content-col">
                         <div class="d-flex flex-column text-start">
-                            <h3 class="content-header">
+                            <h3 class="content-header text-black">
                                 {{carouselBody[indexCarousel].header}}
                             </h3>
                             <p class="content-body">{{carouselBody[indexCarousel].body}}</p>

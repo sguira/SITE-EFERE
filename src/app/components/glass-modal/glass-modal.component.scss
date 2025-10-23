@@ -1,0 +1,68 @@
+/* IMPORTANT : Ces styles annulent et remplacent le comportement par défaut de Bootstrap
+    pour le 'backdrop'. Nous utilisons notre propre classe personnalisée.
+*/
+
+// Le conteneur entier qui recouvre tout l'écran
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1050; /* Z-index de base de Bootstrap pour les modales */
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    outline: 0;
+}
+
+// Notre classe personnalisée pour l'effet de verre
+.glass-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    // ** LA CLÉ DE L'EFFET GLAÇON **
+    // Applique un flou à tout ce qui se trouve derrière cet élément
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px); /* Support pour navigateurs WebKit (Safari) */
+
+    // Ajout d'une couleur semi-transparente pour le "givré"
+    background-color: rgba(255, 255, 255, 0.15);
+
+    // Ajout d'une petite bordure blanche pour l'effet de lumière (Glassmorphism)
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    /* Animation pour l'apparition du flou */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Quand le modal est visible, on affiche le flou */
+.modal.show .glass-backdrop {
+    opacity: 1;
+}
+
+// Le contenu du modal lui-même (pour un meilleur contraste)
+.modal-content {
+    background-color: white; // Assurez-vous que le contenu est opaque
+    position: relative;
+    z-index: 1051; // Doit être au-dessus du backdrop
+
+    /* Animation d'entrée du modal (facultatif mais agréable) */
+    transform: scale(0.9);
+    opacity: 0;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease;
+}
+
+.modal.show .modal-content {
+    transform: scale(1);
+    opacity: 1;
+}
+
+// Amélioration visuelle du titre
+.modal-title {
+    font-weight: 700;
+    color: #333;
+}

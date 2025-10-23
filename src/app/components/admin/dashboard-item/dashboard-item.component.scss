@@ -1,0 +1,28 @@
+
+.wrapper{
+  display: flex;
+  flex-direction: column;
+  .bar{
+    background-color: green;
+    width: 38px;
+    height: 12px;
+    position: relative;
+    left: 8px;
+    top: 7px;
+    z-index: 0;
+    display: block;
+  }
+
+.item-card{
+  background-color: rgba(150, 223, 169, 0.286);
+  padding: 16px;
+  z-index: 77;
+  display: block;
+  backdrop-filter: blur(16px);
+  max-width: 200px;
+
+}
+
+
+
+}

@@ -1,0 +1,55 @@
+<mat-sidenav-container class="admin-container ">
+
+    <mat-sidenav
+        #sidenav
+        mode="side"
+        opened
+        class="sidebar-nav"
+        [class.collapsed]="isCollapsed"
+    >
+
+        <div class="nav-items-wrapper">
+            <a mat-list-item [routerLink]="item.route" routerLinkActive="active" class="nav-item" *ngFor="let item of menus" >
+                <mat-icon matListIcon>{{item.icon}}</mat-icon>
+                <span *ngIf="!isCollapsed" class="nav-label"> {{item.label}} </span>
+            </a>
+
+            <!-- <a mat-list-item routerLink="/admin/users" class="nav-item">
+                <mat-icon matListIcon>people</mat-icon>
+                <span *ngIf="!isCollapsed" class="nav-label">Utilisateurs</span>
+            </a>
+
+            <a mat-list-item routerLink="/admin/subscriptions" class="nav-item">
+                <mat-icon matListIcon>subscriptions</mat-icon>
+                <span *ngIf="!isCollapsed" class="nav-label">Abonnements</span>
+            </a>
+
+            <a mat-list-item routerLink="/admin/settings" class="nav-item">
+                <mat-icon matListIcon>settings</mat-icon>
+                <span *ngIf="!isCollapsed" class="nav-label">Administration</span>
+            </a> -->
+        </div>
+
+        <div class="collapse-toggle-wrapper">
+            <button mat-icon-button (click)="toggleCollapse()" class="collapse-button">
+                <mat-icon>{{ isCollapsed ? 'menu_open' : 'menu' }}</mat-icon>
+            </button>
+        </div>
+
+    </mat-sidenav>
+
+    <mat-sidenav-content class="main-content">
+        <!-- <mat-toolbar color="primary">
+            <button mat-icon-button (click)="toggleCollapse()" class="mobile-toggle-button">
+                <mat-icon>menu</mat-icon>
+            </button>
+            <span class="app-title">Tableau de Bord Administration</span>
+            </mat-toolbar> -->
+
+        <div class="page-content">
+            <router-outlet></router-outlet>
+        </div>
+
+    </mat-sidenav-content>
+
+</mat-sidenav-container>

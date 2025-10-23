@@ -1,12 +1,16 @@
 .container{
   margin: 36px;
+  // background-color: rgb(182, 145, 145);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
   mat-card{
     margin:46px 18px;
     padding: 12px;
     border-radius: 8px;
     // background-color: ;
-    background-color: whitesmoke;
-    min-width: 280px;
+    // background-color: whitesmoke;
+    min-width: 380px;
+    max-width: 500px;
     mat-card-header{
       justify-content: center;
       margin: auto;
@@ -48,7 +52,7 @@
             padding: 12px;
             border-radius: 6px;
             border: none;
-            background-color: rgb(67, 40, 218);
+            background-color: rgb(9, 114, 144);
             color: white;
             cursor: pointer;
             // &:hover{

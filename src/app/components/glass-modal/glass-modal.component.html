@@ -1,0 +1,17 @@
+<div
+  class="modal d-block"
+  tabindex="-1"
+  role="dialog"
+  [class.show]="isOpen"
+  *ngIf="isOpen"
+  (click)="closeOnOutsideClick($event)"
+>
+  <div class="modal-backdrop glass-backdrop"></div>
+
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content shadow-lg border-0 rounded-4">
+
+      <ng-content></ng-content>
+    </div>
+  </div>
+</div>

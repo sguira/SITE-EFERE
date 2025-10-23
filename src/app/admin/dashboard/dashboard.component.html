@@ -1,0 +1,42 @@
+<div class="row m-5 ">
+
+
+<div class="">
+
+  <div class="title">Tableau de bord</div>
+  <span>
+    Quelques statistiques clés pour surveiller la performance de votre application
+  </span>
+
+</div>
+
+<div class="row g-4  justify-content-start  "  >
+
+    <app-dashboard-item
+      icon="bi bi-people"
+      label="Utilisateurs"
+      [value]="1500"
+      class="col-3"
+    ></app-dashboard-item>
+    <app-dashboard-item
+      icon="bi bi-card-checklist"
+      label="Abonnements"
+      [value]="320"
+      class="col-3"
+    ></app-dashboard-item>
+    <app-dashboard-item
+      icon="bi bi-bar-chart-line"
+      label="Revenus Mensuels"
+      [value]="12500"
+      class="col-3"
+    ></app-dashboard-item>
+    <app-dashboard-item
+      icon="bi bi-gear"
+      label="Paramètres"
+      [value]="75"
+      class="col-3"
+    ></app-dashboard-item>
+
+</div>
+
+</div>

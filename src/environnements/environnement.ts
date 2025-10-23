@@ -1,3 +1,3 @@
-export class environnemen{
-  static apiLink="http://backendapplicationefferay.cleverapps.io/api/v1"
+export class environnemen {
+  static apiLink = 'http://localhost:8080/api/v1';
 }

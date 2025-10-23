@@ -17,7 +17,8 @@
             <mat-expansion-panel
                 *ngFor="let item of faqs; let i = index"
                 class="faq-item"
-                [@fadeInUp]="i"
+                [@fadeInUp]="{value: i, params: { delay: i * 100 }}"
+
             >
                 <mat-expansion-panel-header class="faq-header-title">
                     <mat-panel-title>

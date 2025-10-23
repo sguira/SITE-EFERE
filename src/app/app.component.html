@@ -8,17 +8,19 @@
 
 
 
-    <app-header2>
+    <app-header2 *ngIf="viewHeader">
 
     </app-header2>
 
 
 
-      <router-outlet></router-outlet>
+      <div class="animated-background-container">
+    <router-outlet></router-outlet>
+</div>
 
 
 
-    <footer>
+    <footer *ngIf="viewHeader">
       <app-footer></app-footer>
     </footer>
 
