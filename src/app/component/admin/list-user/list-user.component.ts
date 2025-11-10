@@ -7,7 +7,7 @@ export interface User {
   name: string;
   email: string;
   role: string;
-  createdAt: Date;
+  dateCreation: Date;
 }
 
 // Exemple de données
@@ -17,70 +17,70 @@ const USER_DATA: User[] = [
     name: 'Alice Dubois',
     email: 'alice@example.com',
     role: 'Admin',
-    createdAt: new Date('2024-09-01'),
+    dateCreation: new Date('2024-09-01'),
   },
   {
     id: 2,
     name: 'Bob Martin',
     email: 'bob@example.com',
     role: 'User',
-    createdAt: new Date('2024-09-05'),
+    dateCreation: new Date('2024-09-05'),
   },
   {
     id: 3,
     name: 'Charlie Lefevre',
     email: 'charlie@example.com',
     role: 'User',
-    createdAt: new Date('2024-08-20'),
+    dateCreation: new Date('2024-08-20'),
   },
   {
     id: 4,
     name: 'Diana Moreau',
     email: 'diana@example.com',
     role: 'Premium',
-    createdAt: new Date('2024-10-15'),
+    dateCreation: new Date('2024-10-15'),
   },
   {
     id: 5,
     name: 'Ethan Garcia',
     email: 'ethan@example.com',
     role: 'User',
-    createdAt: new Date('2024-10-10'),
+    dateCreation: new Date('2024-10-10'),
   },
   {
     id: 6,
     name: 'Fiona Bertrand',
     email: 'fiona@example.com',
     role: 'Admin',
-    createdAt: new Date('2024-07-25'),
+    dateCreation: new Date('2024-07-25'),
   },
   {
     id: 7,
     name: 'George Duval',
     email: 'george@example.com',
     role: 'User',
-    createdAt: new Date('2024-09-28'),
+    dateCreation: new Date('2024-09-28'),
   },
   {
     id: 8,
     name: 'Hannah Petit',
     email: 'hannah@example.com',
     role: 'Premium',
-    createdAt: new Date('2024-08-10'),
+    dateCreation: new Date('2024-08-10'),
   },
   {
     id: 9,
     name: 'Ivan Leroy',
     email: 'ivan@example.com',
     role: 'User',
-    createdAt: new Date('2024-10-02'),
+    dateCreation: new Date('2024-10-02'),
   },
   {
     id: 10,
     name: 'Juliette Roux',
     email: 'juliette@example.com',
     role: 'User',
-    createdAt: new Date('2024-09-12'),
+    dateCreation: new Date('2024-09-12'),
   },
   // ... ajouter plus d'utilisateurs si nécessaire
 ];
@@ -110,10 +110,11 @@ export class ListUserComponent {
   suscriptionForm?: FormGroup;
 
   periodicite: any[] = [];
+  isLoading = true;
 
   constructor(public adminService: AdminService, public fb: FormBuilder) {}
 
-  ngOnInit() {
+  async ngOnInit() {
     this.processData();
 
     // this.adminService.getUsers().subscribe((users) => {
@@ -126,14 +127,16 @@ export class ListUserComponent {
       email: ['', Validators.required],
       plan: ['', Validators.required],
     });
-
-    this.adminService.getUsers().subscribe((value) => {
+    this.isLoading = true;
+    await this.adminService.getUsers().subscribe((value) => {
       this.allUsers = value as any[];
-    });
+      this.processData();
 
-    this.adminService.AbonnementPeriodicite().subscribe((data: any) => {
-      this.periodicite = data;
-      console.log('Périodicités chargées :', this.periodicite);
+      this.adminService.AbonnementPeriodicite().subscribe((data: any) => {
+        this.periodicite = data;
+        console.log('Périodicités chargées :', this.periodicite);
+        this.isLoading = false;
+      });
     });
   }
 
@@ -200,10 +203,10 @@ export class ListUserComponent {
       switch (column) {
         case 'name':
           return this.compare(a.name, b.name, isAsc);
-        case 'createdAt':
+        case 'dateCreation':
           return this.compare(
-            a.createdAt.getTime(),
-            b.createdAt.getTime(),
+            a.dateCreation.getTime(),
+            b.dateCreation.getTime(),
             isAsc
           );
         default:

@@ -124,7 +124,7 @@
     padding: 9px 18px;
     border-radius: 39px;
     text-decoration: none;
-    background-color: rgb(11, 104, 78);
+    // background-color: rgb(11, 104, 78);
     border: none;
     transition: 0.5s linear;
     &:hover{
@@ -227,7 +227,7 @@
       width: 150px;
       display: flex;
       flex-wrap: wrap;
-      background-color: rgba(38, 40, 44, 0.356);
+      // background-color: rgba(38, 40, 44, 0.356);
       border-radius: 8px;
       .icon{
         i{
@@ -239,7 +239,6 @@
 
 
       .item-menu{
-        // background-color: yellow;
         padding: 8px;
         display: flex;
         flex-wrap: wrap;

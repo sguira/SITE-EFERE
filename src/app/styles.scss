@@ -28,7 +28,7 @@ $prefix: "mo-";
 }
 
 body{
-  background-color: #b8ffcd53;
+  background-color: #f2f9f4b5;
   // background-image: var(--gradient-page);
 }
 
@@ -37,7 +37,7 @@ body {
 }
 
 .animate-on-scroll {
-  // opacity: 0;
+  // opacity: 0;&
   transform: translateY(20px);
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
@@ -177,7 +177,7 @@ h1,h2,h3,h4,h5,h6{
 
 :root {
   // --- Couleurs de Base ---
-  --color-page-background: #f0fff4;    // Très clair, presque blanc (menthe pâle)
+  --color-page-background: #ffffff;    // Très clair, presque blanc (menthe pâle)
   --color-card-background: #ffffff;    // Blanc pur pour les composants (formulaire, navbar, footer)
   --color-text-dark: #2c5e2d;          // Vert foncé/forêt pour le texte principal (bonne lisibilité)
   --color-text-muted: #6a9c7b;         // Vert plus doux pour le texte secondaire

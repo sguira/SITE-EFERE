@@ -52,6 +52,7 @@ import { GlassModalComponent } from './components/glass-modal/glass-modal.compon
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 // import {MatS}
 @NgModule({
   declarations: [
@@ -98,6 +99,7 @@ import { MatSelectModule } from '@angular/material/select';
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
+    MatProgressSpinnerModule,
   ],
   providers: [
     {

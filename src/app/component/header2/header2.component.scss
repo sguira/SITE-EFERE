@@ -27,7 +27,7 @@ container-fluid {
 
   // 4. Styles des Liens de Navigation
   .nav-link {
-    color: var(--color-text-muted) !important; // Couleur de base
+    color: white !important; // Couleur de base
     font-weight: 500;
     transition: color 0.3s ease, border-bottom 0.3s ease;
     padding-bottom: 8px !important; // Espace pour l'effet de soulignement
@@ -79,11 +79,15 @@ container-fluid {
 }
 
 
+.navbar-toggler{
+  background-color: white !important;
+}
+
 
 @media screen and (max-width:990px) {
   .navbar{
-    background-color: rgba(18, 88, 18, 0.241) !important;
-    backdrop-filter: blur(22px);
+    // background-color: rgba(18, 88, 18, 0.241) !important;
+    // backdrop-filter: blur(22px);
   }
   .container-fluid{
 
@@ -97,6 +101,7 @@ container-fluid {
       padding: 15px 8px;
       border: 1px solid rgba(255, 255, 255, 0.119);
       color: black !important;
+      color: white !important;
       &:active{
         color: white !important;
       }
