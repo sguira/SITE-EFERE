@@ -1,46 +1,51 @@
-<div class="container-1 col-md-10 m-auto animate mt-5" appScrollAnimation>
-  <div class="carousel-1">
+<div class="feature-showcase-container" appScrollAnimation>
+  <div class="text-center mb-5">
+    <h2 class="section-title">Gérez tout au même endroit</h2>
+    <p class="section-subtitle">Une suite complète pour piloter votre activité.</p>
+  </div>
 
-    <div class="titre grand">
-      <h2 id="text-carousel">
-        Gérez vos clients, fournisseurs, stocks, comptabilité et commandes en un seul endroit.
-      </h2>
-      <p>
-        efere combine tous les éléments essentiels dans une seule application. Planifiez, vérifiez et rationalisez sans
-        effort. Échangez l'encombrement des applications contre une solution simple et organisée avec efere !
-      </p>
-    </div>
-
-    <div class="carousel-containt-1 d-flex flex-column align-items-center">
-
-      <div class="tabs-header">
-        <ul class="d-flex justify-content-center align-items-center">
-          <li *ngFor="let item of carouselBody;let i=index" class="feature-tab text-black"
-            [ngClass]="i === indexCarousel ? 'active-tab' : ''" (click)="selectCarousel(i)">
-            {{item.titre}}
-          </li>
-        </ul>
-      </div>
-
-      <div class="content-area card-stylized p-5">
-        <div class="row content-row" [@slideInOut]="indexCarousel">
-
-          <div class="col-md-6 d-flex justify-content-center image-col">
-            <img [src]="carouselBody[indexCarousel].image" alt="Illustration de {{carouselBody[indexCarousel].titre}}"
-              class="feature-image" width="400">
-          </div>
-
-          <div class="col-md-6 d-flex flex-column text-content-col">
-            <div class="d-flex flex-column text-start">
-              <h3 class="content-header text-black">
-                {{carouselBody[indexCarousel].header}}
-              </h3>
-              <p class="content-body">{{carouselBody[indexCarousel].body}}</p>
+  <div class="row g-4">
+    <!-- Navigation (Left) -->
+    <div class="col-lg-4">
+      <div class="feature-nav d-flex flex-column gap-2">
+        <div *ngFor="let item of carouselBody; let i = index"
+          class="nav-item p-3 rounded-3 cursor-pointer transition-all" [class.active]="i === indexCarousel"
+          (click)="selectCarousel(i)">
+          <div class="d-flex align-items-center gap-3">
+            <div class="icon-box" [class.active-icon]="i === indexCarousel">
+              <i [class]="item.icon"></i>
             </div>
+            <h6 class="mb-0 fw-bold" [class.text-primary]="i === indexCarousel">{{item.titre}}</h6>
           </div>
         </div>
       </div>
+    </div>
 
+    <!-- Content (Right) -->
+    <div class="col-lg-8">
+      <div class="feature-display glass-panel p-4 p-md-5 rounded-4 position-relative overflow-hidden h-100">
+        <div class="content-wrapper" [@slideInOut]="indexCarousel">
+          <div class="row align-items-center h-100">
+            <div class="col-md-6 mb-4 mb-md-0">
+              <div class="image-container">
+                <img [src]="carouselBody[indexCarousel].image" [alt]="carouselBody[indexCarousel].titre"
+                  class="img-fluid rounded-3 shadow-lg feature-img">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <h3 class="mb-3 fw-bold text-dark">{{carouselBody[indexCarousel].header}}</h3>
+              <p class="text-muted leading-relaxed">{{carouselBody[indexCarousel].body}}</p>
+              <button class="btn btn-link text-primary p-0 text-decoration-none fw-medium mt-2">
+                En savoir plus <i class="ri-arrow-right-line ms-1"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Decorative background elements -->
+        <div class="bg-decoration-1"></div>
+        <div class="bg-decoration-2"></div>
+      </div>
     </div>
   </div>
 </div>

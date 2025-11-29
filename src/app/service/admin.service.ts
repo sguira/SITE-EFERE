@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { environnemen } from 'src/environnements/environnement';
+import { environnement   } from 'src/environnements/environnement';
 import { StorageService } from './storage.service';
 import { ActivatedRouteSnapshot } from '@angular/router';
 
@@ -9,7 +9,7 @@ import { ActivatedRouteSnapshot } from '@angular/router';
   providedIn: 'root',
 })
 export class AdminService {
-  url = environnemen.apiLink;
+  url = environnement.apiLink;
 
   IsConnected: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   ListPeriodicite: BehaviorSubject<any[]> = new BehaviorSubject<any[]>([]);

@@ -1,47 +1,44 @@
-.container{
+.container {
   margin: 36px;
-<<<<<<< HEAD
   // background-color: rgb(182, 145, 145);
   -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
-=======
->>>>>>> 231d21a (projet efere)
-  mat-card{
-    margin:46px 18px;
+
+  mat-card {
+    margin: 46px 18px;
     padding: 12px;
     border-radius: 8px;
     // background-color: ;
-<<<<<<< HEAD
     // background-color: whitesmoke;
     min-width: 380px;
     max-width: 500px;
-=======
-    background-color: whitesmoke;
-    min-width: 280px;
->>>>>>> 231d21a (projet efere)
-    mat-card-header{
+
+    mat-card-header {
       justify-content: center;
       margin: auto;
+
       // background-color: red;
       // width: 100%;
-      mat-card-title{
+      mat-card-title {
         display: block;
-      font-size: 22px;
-      font-weight: bold;
+        font-size: 22px;
+        font-weight: bold;
 
       }
     }
 
-    mat-card-content{
-      form{
-        .form-group{
+    mat-card-content {
+      form {
+        .form-group {
           display: flex;
           flex-direction: column;
           margin: 12px auto;
-          label{
+
+          label {
             color: rgba(59, 58, 58, 0.804);
           }
-          input{
+
+          input {
             padding: 11px;
             min-width: 280px;
             border-radius: 6px;
@@ -50,30 +47,29 @@
           }
         }
 
-        .btns{
+        .btns {
           display: flex;
           flex-direction: row;
           flex-wrap: wrap;
           justify-content: space-between;
+
           // background-color: red;
-          button{
+          button {
             padding: 12px;
             border-radius: 6px;
             border: none;
-<<<<<<< HEAD
             background-color: rgb(9, 114, 144);
-=======
             background-color: rgb(67, 40, 218);
->>>>>>> 231d21a (projet efere)
             color: white;
             cursor: pointer;
+
             // &:hover{
             //   transform: scale(1.05);
             // }
-          &:disabled{
-            background-color: silver;
-            cursor: none;
-          }
+            &:disabled {
+              background-color: silver;
+              cursor: none;
+            }
           }
         }
       }
@@ -82,9 +78,10 @@
 }
 
 @media screen and (max-width: 600px) {
-  .container{
+  .container {
     margin: 56px auto;
-    mat-card{
+
+    mat-card {
       margin: 48px 12px;
     }
   }

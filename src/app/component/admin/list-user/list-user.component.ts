@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-<<<<<<< HEAD
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AdminService } from 'src/app/service/admin.service';
 
@@ -264,28 +263,4 @@ export class ListUserComponent {
   closed(event: any) {
     this.showModal = event;
   }
-=======
-import { AdminService } from 'src/app/service/admin.service';
-
-@Component({
-  selector: 'app-list-user',
-  templateUrl: './list-user.component.html',
-  styleUrls: ['./list-user.component.scss']
-})
-export class ListUserComponent {
-
-  users:any=[]
-
-  constructor(public admin:AdminService){}
-
-  ngOnInit(): void {
-
-    this.admin.getUsers().subscribe((e)=>{
-      console.log(e)
-      this.users=e
-    })
-
-  }
-
->>>>>>> 231d21a (projet efere)
 }

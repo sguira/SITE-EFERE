@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 declare var bootstrap: any;
+import { environnement } from 'src/environnements/environnement';
 
 @Component({
   selector: 'app-header2',
@@ -7,6 +8,9 @@ declare var bootstrap: any;
   styleUrls: ['./header2.component.scss'],
 })
 export class Header2Component {
+
+  espaceClientLink = environnement.espaceClientLink;
+
   menuItems = [
     {
       label: 'Accueil',

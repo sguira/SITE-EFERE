@@ -1,35 +1,4 @@
-<<<<<<< HEAD
-// Assurez-vous d'avoir importé les icônes Bootstrap (Bootstrap Icons) pour le HTML ci-dessus
-// Si ce n'est pas le cas, remplacez les balises <i> par des balises d'icônes simples ou des images.
-
-// Style pour les en-têtes de colonnes triables
-.sortable {
-    cursor: pointer;
-    -webkit-user-select: none;
-    transition: background-color 0.2s;
-
-    &:hover {
-        background-color: #e0f7fa; // Léger effet au survol
-    }
-
-    // Positionner l'icône de tri à droite
-    .bi {
-        margin-left: 5px;
-        font-size: 0.9em;
-    }
-}
-
-// Assurez-vous que l'icône de la flèche de la pagination a un pointeur
-.page-link {
-    cursor: pointer;
-}
-
-// Pour garantir que les icônes de tri s'affichent correctement (si vous utilisez Bi-filter-square par défaut)
-// Cette règle n'est nécessaire que si l'icône de base ne s'affiche pas correctement au démarrage
-.bi-filter-square {
-    color: #999;
-=======
-.container{
+.container {
   // background-color: black;
   padding: 18px;
   margin: 76px auto;
@@ -41,19 +10,19 @@
   justify-items: center;
 
   // background-color: red;
-  .header{
+  .header {
     // background-color: yellow;
     justify-content: center;
     display: flex;
     margin: 18px auto;
     color: white;
   }
-  .list{
+
+  .list {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     // background-color: red;
     justify-content: center;
   }
->>>>>>> 231d21a (projet efere)
 }

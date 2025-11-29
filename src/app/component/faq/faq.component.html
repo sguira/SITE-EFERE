@@ -1,119 +1,60 @@
-<<<<<<< HEAD
 <div class="faq-container">
 
-    <!-- Header -->
-    <header class="faq-hero text-center">
-        <div class="container">
-            <span class="badge-soft mb-3">Support</span>
-            <h1 class="display-4 fw-bold mb-3">Foire Aux <span class="text-gradient">Questions</span></h1>
-            <p class="lead text-muted mx-auto" style="max-width: 600px;">
-                Trouvez rapidement des réponses à vos questions sur l'utilisation d'Efere.
-            </p>
-        </div>
-    </header>
-
-    <div class="container faq-content">
-        <div class="accordion-wrapper glass-panel">
-            <mat-accordion displayMode="flat" multi="false">
-                <mat-expansion-panel *ngFor="let item of faqs; let i = index" class="custom-panel mb-3" hideToggle>
-
-                    <mat-expansion-panel-header class="panel-header">
-                        <mat-panel-title class="d-flex align-items-center gap-3">
-                            <div class="icon-indicator">
-                                <i class="ri-question-line"></i>
-                            </div>
-                            <span class="question-text">{{ item.titre }}</span>
-                        </mat-panel-title>
-                        <mat-panel-description class="d-none d-md-block text-end">
-                            <i class="ri-add-line toggle-icon"></i>
-                        </mat-panel-description>
-                    </mat-expansion-panel-header>
-
-                    <div class="panel-body pt-3">
-                        <p class="answer-text">{{ item.description }}</p>
-
-                        <div *ngFor="let detail of item.contents" class="detail-text mt-2">
-                            <i class="ri-checkbox-circle-line text-success me-2"></i> {{ detail }}
-                        </div>
-
-                        <!-- Illustrations Gallery -->
-                        <div class="illustrations-grid mt-4"
-                            *ngIf="item.illustrations && item.illustrations.length > 0">
-                            <div class="illustration-card" *ngFor="let img of item.illustrations">
-                                <img [src]="img.image" [alt]="img.titre">
-                                <span class="caption">{{ img.titre }}</span>
-                            </div>
-                        </div>
-                    </div>
-
-                </mat-expansion-panel>
-            </mat-accordion>
-        </div>
-
-        <!-- Contact CTA -->
-        <div class="text-center mt-5">
-            <p class="text-muted">Vous ne trouvez pas votre réponse ?</p>
-            <button class="btn-primary-custom">
-                Contactez le support
-            </button>
-        </div>
+  <!-- Header -->
+  <header class="faq-hero text-center">
+    <div class="container">
+      <span class="badge-soft mb-3">Support</span>
+      <h1 class="display-4 fw-bold mb-3">Foire Aux <span class="text-gradient">Questions</span></h1>
+      <p class="lead text-muted mx-auto" style="max-width: 600px;">
+        Trouvez rapidement des réponses à vos questions sur l'utilisation d'Efere.
+      </p>
     </div>
+  </header>
 
-</div>
-=======
-<div class="container">
+  <div class="container faq-content">
+    <div class="accordion-wrapper glass-panel">
+      <mat-accordion displayMode="flat" multi="false">
+        <mat-expansion-panel *ngFor="let item of faqs; let i = index" class="custom-panel mb-3" hideToggle>
 
-  <div class="image">
-    <img src="../../../assets/Image/faq2.svg" alt="">
-  </div>
+          <mat-expansion-panel-header class="panel-header">
+            <mat-panel-title class="d-flex align-items-center gap-3">
+              <div class="icon-indicator">
+                <i class="ri-question-line"></i>
+              </div>
+              <span class="question-text">{{ item.titre }}</span>
+            </mat-panel-title>
+            <mat-panel-description class="d-none d-md-block text-end">
+              <i class="ri-add-line toggle-icon"></i>
+            </mat-panel-description>
+          </mat-expansion-panel-header>
 
-  <div class="titre">
-    <h1>
-      Reponse à quelques questions de base
-    </h1>
-  </div>
+          <div class="panel-body pt-3">
+            <p class="answer-text">{{ item.description }}</p>
 
-  <div class="faqs">
-    <!-- <ul class="accordion">
-      <li *ngFor="let item of faqs;let i=index" checked>
-        <input type="radio" name="accordion" [id]="i">
-        <label for="first">{{item.titre}}</label>
-        <div class="contents" >
-          <p>{{item.description}}</p>
-          <ul>
-            <p *ngFor="let item of item.contents" >{{item}}</p>
-          </ul>
-        </div>
-      </li>
-    </ul> -->
+            <div *ngFor="let detail of item.contents" class="detail-text mt-2">
+              <i class="ri-checkbox-circle-line text-success me-2"></i> {{ detail }}
+            </div>
 
-    <mat-accordion class="accordion-list">
-      <mat-expansion-panel *ngFor="let item of faqs" class="item">
-        <mat-expansion-panel-header>
-          <mat-panel-title>
-            {{ item.titre }}
-          </mat-panel-title>
-
-        </mat-expansion-panel-header>
-        <mat-list>
-          <mat-panel-description>
-            {{ item.description }}
-          </mat-panel-description>
-          <br>
-          <p *ngFor="let detail of item.contents">{{ detail }}</p>
-          <div class="images">
-            <h2>
-              Quelques Images D'illustrations
-            </h2>
-            <div class="image" *ngFor="let illustraion of item.illustrations">
-              <label for=""> {{illustraion.titre}} </label>
-              <img [src]="illustraion.image" alt="">
+            <!-- Illustrations Gallery -->
+            <div class="illustrations-grid mt-4" *ngIf="item.illustrations && item.illustrations.length > 0">
+              <div class="illustration-card" *ngFor="let img of item.illustrations">
+                <img [src]="img.image" [alt]="img.titre">
+                <span class="caption">{{ img.titre }}</span>
+              </div>
             </div>
           </div>
-        </mat-list>
-      </mat-expansion-panel>
-    </mat-accordion>
+
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+
+    <!-- Contact CTA -->
+    <div class="text-center mt-5">
+      <p class="text-muted">Vous ne trouvez pas votre réponse ?</p>
+      <button class="btn-primary-custom">
+        Contactez le support
+      </button>
+    </div>
   </div>
 
 </div>
->>>>>>> 231d21a (projet efere)
