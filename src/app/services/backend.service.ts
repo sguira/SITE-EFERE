@@ -7,7 +7,9 @@ import { Contact } from '../interfaces/contact';
   providedIn: 'root',
 })
 export class BackendService {
-  url: any = 'https://api.efere.space/backend/users/vitrine/contact';
+  // url: any = 'https://api.efere.space/backend/users/vitrine/contact';
+  url: any = 'https://api.efere.space/backend/api/v1/auth/vitrine/contact';
+
   constructor(private http: HttpClient) {}
 
   sendMail(contact: Contact): Observable<any> {
