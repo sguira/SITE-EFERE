@@ -160,10 +160,10 @@
 
         // Style par défaut (secondaire)
         background-color: var(--color-secondary-accent);
-        color: white;
+        color: black;
 
         &:hover {
-            background-color: var(--color-primary-accent);
+            background-color: white;
             box-shadow: 0 5px 15px rgba(56, 164, 82, 0.4);
         }
 

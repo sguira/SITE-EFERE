@@ -13,41 +13,57 @@ export class AccueilComponent {
       texte: 'Gestion Stock',
       icon: 'bi bi-box-seam', // 📦 icône de stock / inventaire
       color: 'rgba(233, 233, 166, 0.73)',
+      description:
+        'Optimisez vos niveaux de stock, alertes et réapprovisionnements automatiques.',
     },
     {
       texte: 'Gestion Clients',
       icon: 'bi bi-people-fill', // 👥 icône de clients
       color: 'rgba(233, 233, 166, 0.73)',
+      description:
+        "Centralisez les fiches clients et suivez l'historique des échanges.",
     },
     {
       texte: 'Gestion Fournisseurs',
       icon: 'bi bi-truck', // 🚚 icône de livraison / fournisseur
       color: 'rgba(233, 233, 166, 0.73)',
+      description:
+        'Suivez fournisseurs, commandes et livraisons pour un approvisionnement fiable.',
     },
     {
       texte: 'Gestion Vente',
       icon: 'bi bi-cart-check', // 🛒 icône de vente
       color: 'rgba(233, 233, 166, 0.73)',
+      description:
+        'Gérez les ventes, paiements et performances commerciales en temps réel.',
     },
     {
       texte: 'Gestion Achats',
       icon: 'bi bi-bag-check-fill', // 🛍️ icône d'achat
       color: 'rgba(233, 233, 166, 0.73)',
+      description:
+        "Optimisez les commandes d'achat, validations et réceptions fournisseurs.",
     },
     {
       texte: 'Gestion Facture',
       icon: 'bi bi-receipt-cutoff', // 🧾 icône de facture
       color: 'rgba(233, 233, 166, 0.73)',
+      description:
+        'Créez, envoyez et suivez les factures ; automatisez les relances.',
     },
     {
       texte: 'Comptabilité',
       icon: 'bi bi-cash-stack', // 💰 icône d’argent / comptabilité
       color: 'rgba(233, 233, 166, 0.73)',
+      description:
+        'Automatisez la comptabilité, rapprochements et rapports financiers.',
     },
     {
       texte: 'Gestion Commande',
       icon: 'bi bi-clipboard-check', // 📋 icône de commande validée
       color: 'rgba(233, 233, 166, 0.73)',
+      description:
+        'Traitez les commandes du panier à la livraison en toute simplicité.',
     },
   ];
 
@@ -144,6 +160,6 @@ export class AccueilComponent {
   }
 
   gotoEspaceClient() {
-    window.open(environnement.espaceClientLink, '_blank'); 
+    window.open(environnement.espaceClientLink, '_blank');
   }
 }

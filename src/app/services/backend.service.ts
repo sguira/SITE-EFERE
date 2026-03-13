@@ -7,8 +7,8 @@ import { Contact } from '../interfaces/contact';
   providedIn: 'root',
 })
 export class BackendService {
-  // url: any = 'https://api.efere.space/backend/users/vitrine/contact';
   url: any = 'https://api.efere.space/backend/api/v1/auth/vitrine/contact';
+  // url: any = 'http://localhost:8080/api/v1/auth/vitrine/contact';
 
   constructor(private http: HttpClient) {}
 

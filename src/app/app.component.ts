@@ -20,6 +20,8 @@ export class AppComponent implements OnInit {
       if (url.includes('admin')) {
         window.scrollTo(0, 0);
         this.viewHeader = false;
+      } else {
+        window.scrollTo(0, 0);
       }
     });
   }
