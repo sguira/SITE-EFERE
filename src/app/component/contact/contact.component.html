@@ -1,9 +1,9 @@
 <section class="contact-section py-5">
     <div class="container" appScrollAnimation>
-        <div class="row g-5 align-items-center">
+        <div class="row g-5 align-items-center mx-0">
             <!-- Left Column: Illustration & Info -->
             <div class="col-lg-5">
-                <div class="contact-info-card glass-panel p-4 rounded-xl mb-4 text-center">
+                <div class="contact-info-card glass-panel p-xl-4 p-3 rounded-xl mb-4 text-center">
                     <div class="illustration-wrapper mb-4">
                         <img src="../../../assets/Image/Mail.gif" alt="Contact Illustration"
                             class="img-fluid rounded-lg" style="max-height: 250px;">
@@ -13,7 +13,7 @@
                         Notre équipe est là pour répondre à toutes vos questions sur Efere.
                     </p>
 
-                    <div class="d-flex flex-column gap-3 text-start px-lg-4">
+                    <div class="d-flex flex-row gap-3 text-start px-lg-1 flex-wrap">
                         <div class="d-flex align-items-center gap-3">
                             <div class="icon-box-sm bg-primary-subtle text-primary rounded-circle p-2">
                                 <i class="ri-phone-line"></i>
@@ -23,13 +23,20 @@
                                 <span class="fw-medium">+225 07 08 06 76 17</span>
                             </div>
                         </div>
-                        <div class="d-flex align-items-center gap-3">
+                        <div class="d-flex align-items-center gap-3 flex-wrap">
                             <div class="icon-box-sm bg-primary-subtle text-primary rounded-circle p-2">
                                 <i class="ri-mail-send-line"></i>
                             </div>
                             <div>
                                 <small class="text-muted d-block">Email</small>
                                 <span class="fw-medium">contact@efere.com</span>
+                            </div>
+
+
+                        </div>
+                        <div class="d-flex align-items-center gap-3 flex-wrap">
+                            <div class="icon-box-sm bg-primary-subtle text-primary rounded-circle p-2">
+                                <i class="ri-mail-send-line"></i>
                             </div>
                             <div>
                                 <small class="text-muted d-block">Support efere</small>
@@ -41,8 +48,8 @@
             </div>
 
             <!-- Right Column: Form -->
-            <div class="col-lg-7">
-                <div class="contact-form-wrapper glass-panel p-5 rounded-xl shadow-lg">
+            <div class="col-lg-7 m-0">
+                <div class="contact-form-wrapper glass-panel p-xl-5 rounded-xl shadow-lg">
                     <div class="header mb-4">
                         <h1 class="h2 fw-bold text-primary">Envoyez-nous un message</h1>
                         <p class="text-muted">Remplissez le formulaire ci-dessous, nous vous répondrons rapidement.</p>
@@ -90,7 +97,7 @@
                         </div>
 
                         <div class="d-flex justify-content-end gap-3 mt-2">
-                            <button type="reset" class="btn btn-outline-secondary rounded-pill px-4">Annuler</button>
+                            <button type="reset" class="btn btn-outline-secondary rounded-pill px-4 d-md-block d-none">Annuler</button>
                             <button type="submit" [disabled]="userForm?.invalid" class="btn btn-primary-custom px-5">
                                 Envoyer <i class="ri-send-plane-fill ms-2"></i>
                             </button>

@@ -1,128 +1,35 @@
 <section class="pricing-section">
-    <div class="container">
+  <div class="container">
 
-        <div class="header-titre animate" appScrollAnimation>
-            <h1>Nos Tarifs Simples et Flexibles</h1>
-            <p>Choisissez l'abonnement qui correspond le mieux à la croissance de votre entreprise. Tous les plans incluent un accès complet aux fonctionnalités d'efere.</p>
-        </div>
-
-        <div class="pricing-grid">
-
-            <div class="price-card animate" appScrollAnimation>
-                <div class="plan-header">
-                    <h2>Mensuel</h2>
-                </div>
-                <div class="price">
-                    <span class="currency">FCFA</span>
-                    <span class="amount">3 000</span>
-                    <span class="period">/mois</span>
-                </div>
-                <div class="features">
-                    <ul>
-                        <li><i class="ri-check-line"></i> Accès complet à efere</li>
-                        <li><i class="ri-check-line"></i> Idéal pour tester notre solution</li>
-                        <li class="disabled"><i class="ri-close-line"></i> Économies sur le long terme</li>
-                    </ul>
-                </div>
-                <a href="https://espace.efere.space" class="cta-button">Démarrer maintenant</a>
-            </div>
-
-            <div class="price-card animate" appScrollAnimation>
-                <div class="plan-header">
-                    <h2>Trimestriel</h2>
-                </div>
-                <div class="price">
-                    <span class="currency">FCFA</span>
-                    <span class="amount">8 000</span>
-                    <span class="period">/3 mois</span>
-                </div>
-                <div class="features">
-                    <ul>
-                        <li><i class="ri-check-line"></i> Accès complet à efere</li>
-                        <li><i class="ri-check-line"></i> Économisez 1 000 FCFA</li>
-                        <li><i class="ri-check-line"></i> Engagement flexible</li>
-                    </ul>
-                </div>
-                <a href="#" class="cta-button">Choisir ce plan</a>
-            </div>
-
-            <div class="price-card animate" appScrollAnimation>
-                <div class="tag">Le Plus Populaire</div>
-                <div class="plan-header">
-                    <h2>Semestriel</h2>
-                </div>
-                <div class="price">
-                    <span class="currency">FCFA</span>
-                    <span class="amount">15 000</span>
-                    <span class="period">/6 mois</span>
-                </div>
-                <div class="features">
-                    <ul>
-                        <li><i class="ri-check-line"></i> Accès complet à efere</li>
-                        <li><i class="ri-check-line"></i> Économisez 3 000 FCFA</li>
-                        <li><i class="ri-check-line"></i> Support prioritaire</li>
-                    </ul>
-                </div>
-                <a href="#" class="cta-button">Je m'abonne (Économique)</a>
-            </div>
-
-            <div class="price-card animate" appScrollAnimation>
-                <div class="plan-header">
-                    <h2>Annuel</h2>
-                </div>
-                <div class="price">
-                    <span class="currency">FCFA</span>
-                    <span class="amount">25 000</span>
-                    <span class="period">/an</span>
-                </div>
-                <div class="features">
-                    <ul>
-                        <li><i class="ri-check-line"></i> Accès complet à efere</li>
-                        <li><i class="ri-check-line"></i> **Économisez 11 000 FCFA**</li>
-                        <li><i class="ri-check-line"></i> Le meilleur rapport qualité/prix</li>
-                    </ul>
-                </div>
-                <a href="#" class="cta-button">Choisir le plan annuel</a>
-            </div>
-
-            <div class="price-card animate" appScrollAnimation>
-                <div class="plan-header">
-                    <h2>24 Mois</h2>
-                </div>
-                <div class="price">
-                    <span class="currency">FCFA</span>
-                    <span class="amount">45 000</span>
-                    <span class="period">/2 ans</span>
-                </div>
-                <div class="features">
-                    <ul>
-                        <li><i class="ri-check-line"></i> Accès complet à efere</li>
-                        <li><i class="ri-check-line"></i> **Économisez 16 000 FCFA**</li>
-                        <li><i class="ri-check-line"></i> Le meilleur rapport qualité/prix</li>
-                    </ul>
-                </div>
-                <a href="#" class="cta-button">Choisir le plan de 24 mois</a>
-            </div>
-
-            <div class="price-card animate" appScrollAnimation>
-                <div class="plan-header">
-                    <h2>36 Mois</h2>
-                </div>
-                <div class="price">
-                    <span class="currency">FCFA</span>
-                    <span class="amount">65 000</span>
-                    <span class="period">/3 ans</span>
-                </div>
-                <div class="features">
-                    <ul>
-                        <li><i class="ri-check-line"></i> Accès complet à efere</li>
-                        <li><i class="ri-check-line"></i> **Économisez 21 000 FCFA**</li>
-                        <li><i class="ri-check-line"></i> Le meilleur rapport qualité/prix</li>
-                    </ul>
-                </div>
-                <a href="#" class="cta-button">Choisir le plan de 36 mois</a>
-            </div>
-
-        </div>
+    <div class="header-titre animate" appScrollAnimation>
+      <h1>Nos Tarifs Simples et Flexibles</h1>
+      <p>Choisissez l'abonnement qui correspond le mieux à la croissance de votre entreprise. Tous les plans incluent un accès complet aux fonctionnalités d'efere.</p>
     </div>
+
+    <div class="pricing-grid">
+
+      <div class="price-card animate" appScrollAnimation *ngFor="let plan of tarifs">
+        <div class="tag" *ngIf="plan.tag">{{ plan.tag }}</div>
+        <div class="plan-header">
+          <h2>{{ plan.title }}</h2>
+        </div>
+        <div class="price">
+          <span class="amount">{{ plan.price | number:'1.0-0' }}</span>
+          <ng-container *ngIf="plan.currency"><span class="currency ">{{ plan.currency }}</span></ng-container>
+
+          <span class="period">{{ plan.period }}</span>
+        </div>
+        <div class="features">
+          <ul>
+            <li *ngFor="let f of plan.features" [class.disabled]="!f.included">
+              <i [ngClass]="f.included ? 'ri-check-line' : 'ri-close-line'"></i>
+              <span [innerHTML]="f.label"></span>
+            </li>
+          </ul>
+        </div>
+        <!-- <a [href]="plan.link || '#'" class="cta-button">{{ plan.ctaText || 'Choisir ce plan' }}</a> -->
+      </div>
+
+    </div>
+  </div>
 </section>
